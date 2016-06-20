@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Links demos (April 2006)</title>
+    <link rel="stylesheet" type="text/css" href="http://homepages.inf.ed.ac.uk/wadler/style.css" />
+  </head>
+  <body>
+    <h1>Links demos (April 2006)</h1>
+
+These demos use an old version of Links. Up-to-date versions and
+several more examples can be found <a href="examples/">here</a>.
+
+    <ul>
+      <li><a href="demos/factorial.links">Factorial</a> (<a href="demossrc/factorial.links">source</a>)</li>
+      <li><a href="demos/dict-suggest.links">Dictionary suggest</a> (<a href="demossrc/dict-suggest.links">source</a>)</li>
+      <li><a href="demos/draggable.links">Draggable lists</a> (<a href="demossrc/draggable.links">source</a>)</li>
+      <li><a href="demos/progress.links">Progress bar</a> (<a href="demossrc/progress.links">source</a>)</li>
+    </ul>
+
+This is a prototype implementation. It has only been tested with <a
+href="http://www.mozilla.com/firefox/">FireFox</a>.  The syntax and
+functionality of this code differs from our paper, submitted to ICFP,
+in the following ways:
+
+<ul>
+
+<li id="var-keyword"> In the paper, variable bindings are introduced
+by a <code>var</code> keyword; the keyword is omitted in this
+implementation.  </li>
+
+<li id="table-decl"> 
+Tables are declared differently. In the implementation, tables
+are just values, assigned like any other:
+<pre>
+factorials = Table "factorials" (i : Int, f: Int) from db;
+</pre>
+In the paper, tables are "declared" and the variable has the same name
+as the table:
+<pre>
+table factorials (i : Int, f: Int) database db;
+</pre>
+</li>
+
+<li id="sorting"> The syntax for sorting a table is different. In the
+implementation, we offer a <code>order</code> keyword on
+<code>Table</code> declarations:
+
+<pre>
+Table "factorials" (...) order [ ... ] from db;
+</pre>
+In the paper, comprehensions rather than tables are given an <code>orderby</code>
+clause:
+<pre>
+for (x <- factorials)
+orderby ( ... ) ...
+</pre>
+</li>
+
+<li id="no-regexp"> In some examples, we use slashes to delimit a regular expression,
+and use the tilde as the regular expression matching operator:
+<code>
+t ~ /[0-9]+/
+</code>
+Regular expressions are not yet supported in the implementation.
+</li>
+
+<li id="SwapNodes">
+The draggable lists demo uses a <code>SwapNodes</code> DOM operation
+that is not described in the paper. <code>SwapNodes</code> accepts
+references to two nodes in the DOM tree and swaps their positions in
+the tree.  </li>
+
+<li id="receive"> In the paper the cases of a "receive" expression begin with the "case" keyword.
+<pre>
+receive {
+  case Label1 -> body1;
+  case Label2 -> body2;
+}
+</pre>
+
+In the implementation, the case keyword is not used:
+
+<pre>
+receieve {
+  Label1 -> body1
+  Label2 -> body2
+}
+</pre>
+</li>
+
+<li id="spawn"> In the paper, <code>spawn</code> takes a proper expression as its argument:
+<pre>
+spawn { expr };
+</pre>
+
+In the implementation, <code>spawn</code> is an ordinary function and it takes a
+functional value as its argument:
+
+<pre>
+fun f { expr }
+...
+spawn(f);
+</pre>
+
+</li>
+
+</ul>
+
+
+    <p><a href="http://groups.inf.ed.ac.uk/links/">Links homepage</a></p>
+  </body>
+</html>

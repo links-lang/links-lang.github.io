@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Links</title>
+    <meta name="keywords" content="Philip Wadler, Phil Wadler, Links, XML, web programming languages, functional programming languages">
+    <link rel="stylesheet" type="text/css" href="http://homepages.inf.ed.ac.uk/wadler/style.css" />
+    <link rel="stylesheet" type="text/css" href="links.css"/>
+  </head>
+  <body>
+    <h1>Links: Linking Theory to Practice for the Web</h1>
+      <div class="content">
+      <p>
+        <em>Links is a functional programming language designed to
+        make web programming easier.</em>
+      </p>
+        
+      <p> Links eases building interactive web applications with
+        significant client- and server-side components.  </p>
+      <p>
+	A typical, modern web program involves many "tiers": part of
+	the program runs in the web browser, part runs on a web
+	server, and part runs in back-end systems such as a relational
+	database.  To create such a program, the programmer must
+	master a myriad of languages: the logic is written in a
+	mixture of Java, Python, and Perl; the presentation in HTML;
+	the GUI behavior in Javascript; and the queries are written in
+	SQL or XQuery.  There is no easy way to link these, for
+	example, to be sure that an HTML form or an SQL query produces
+	the type of data that the Java code expects.  This problem is
+	called the <em>impedance mismatch</em> problem.
+      </p>
+      <p>
+	Links eases the impedance mismatch problem by providing a
+	single language for all three tiers.  The system generates
+	code for each tier; for instance, translating some code into
+	Javascript for the browser, some into a bytecode for the
+	server, and some into SQL for the database.
+      </p>
+      <p>
+        Links incorporates proven ideas from other programming
+	languages: database-query support from Kleisli,
+	web-interaction proposals from PLT Scheme, and
+	distributed-computing support from Erlang. On top of this, it
+	adds some new web-centric features of its own.
+      </p>
+      <p><h3>Demos</h3>
+        <a href="http://groups.inf.ed.ac.uk/links/examples/">Demo Links programs</a>.
+      <p><h3> Download</h3>
+          The original Links development effort ended at the beginning
+          of 2009. The last official release of Links is version 0.5.
+
+          In 2014 development on Links resumed with a focus on adding
+          <a href="http://groups.inf.ed.ac.uk/abcd">session types</a>
+          to Links.
+          
+          At some point we intend to merge the session typing branch
+          into the trunk and do a proper release.
+
+	  <ul>
+           <li>
+            <a href="https://github.com/links-lang/links">
+             GitHub repository
+            </a>
+	   </li>
+           <li>
+            <a href="https://github.com/links-lang/links/tree/sessions">
+             Session typing branch
+            </a>
+	   </li>
+           <li>
+            <a href="source/links-0.5.0.tar.gz">
+             Old Links source code (version 0.5)
+            </a>
+           </li>
+	   <li>
+	    <a href="links/quick-help.html">
+	     Out-of-date basic documentation
+	    </a>
+	   </li>
+	  </ul>
+      </p>
+
+      <p> <h3>Community</h3>
+        <a href="http://lists.inf.ed.ac.uk/mailman/listinfo/links-users">links-users</a> mailing list
+      </p>
+
+      <p> <h3>Publications</h3>
+          <ul>
+            <li><a href="http://homepages.inf.ed.ac.uk/slindley/papers/shredding.pdf">Effective quotation</a>.
+            James Cheney, Sam Lindley, Gabriel Radanne, and Philip Wadler.
+            In the proceedings of
+            <a href="http://www.program-transformation.org/PEPM14">PEPM 2014</a>.
+            </li>
+
+            <li><a href="http://homepages.inf.ed.ac.uk/slindley/papers/shredding.pdf">
+                Query shredding: efficient relational evaluation of queries over nested multisets</a>.
+            James Cheney, Sam Lindley, and Philip Wadler.
+            In the proceedings of
+            <a href="http://www.sigmod2014.org/">SIGMOD 2014</a>.
+            </li>
+            
+            <li><a href="http://homepages.inf.ed.ac.uk/slindley/papers/corelinks.pdf">
+                  Row-based effect types for database integration</a>.
+            Sam Lindley and James Cheney.
+            In the proceedings of
+            <a href="http://www.cis.upenn.edu/~bcpierce/tldi12/">TLDI 2012</a>.
+            </li>
+            <li><a href="http://homepages.inf.ed.ac.uk/slindley/papers/dbwiki-dbpl2011.pdf">
+                  DBWiki: a database wiki prototyped in Links</a>.
+            James Cheney, Sam Lindley and Heiko M&uuml;ller.
+            In the proceedings of
+            <a href="http://www.cs.cornell.edu/conferences/dbpl2011/">DBPL 2011</a>.
+            </li>
+            <li><a href="arrows/">The arrow calculus</a>.
+            Sam Lindley, Philip Wadler, and Jeremy Yallop.
+            </li>
+            <li><a href="formlets/">The essence of form abstraction</a>.
+            Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.
+            In the proceedings of
+            <a href="http://research.microsoft.com/~grama/APLAS2008/">APLAS 2008</a>.
+            </li>
+            <li><a href="arrows/"> Idioms are oblivious, arrows are meticulous, monads are promiscuous</a>.
+            Sam Lindley, Philip Wadler, and Jeremy Yallop.
+            In the proceedings of 
+            <a href="http://www.msfp.org.uk/">MSFP 2008</a>.</li>
+            <li><a href="papers/links-fmco06.pdf">Links: web programming without tiers</a>.
+            Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.
+            In the proceedings of
+            <a href="http://fmco.liacs.nl/fmco06.html">FMCO 2006</a>, LNCS 4709.</li>
+            <li><a href="epsrc05/case.pdf">Original grant proposal</a> for EPSRC (2005).</li>
+            <ul>
+              <li><a href="epsrc05/LShift_Links.pdf">Letter of support from LShift</a></li>
+              <li><a href="epsrc05/rundeep.doc">Letter of support from Run Deep</a></li>
+            </ul>
+          </li>
+         </ul>
+      </p>
+
+      <p> <h3>Core team</h3>
+        <a href="people.html">Group photo</a> (Nov 2006).
+        <ul>
+          <li>Ezra Cooper, PhD student (graduated).</li>
+          <li>Gilles Dubochet, MSc student (graduated).</li>
+          <li><a href="http://simonjf.com/">Simon Fowler</a>.</li>
+          <li><a href="http://homepages.inf.ed.ac.uk/s1467124/">Daniel Hillerstr&ouml;m</a>.</li>
+          <li><a href="http://homepages.inf.ed.ac.uk/slindley/">Sam Lindley</a>.</li>
+          <li><a href="http://homepages.inf.ed.ac.uk/jmorri14/">Garrett Morris</a>.</li>
+	  <li><a href="http://homepages.inf.ed.ac.uk/wadler/">Philip Wadler</a>.</li>
+	  <li>Jeremy Yallop, PhD student (graduated).</li>
+	</ul>
+      </p>
+      <p> <h3>Visitors</h3>
+        <ul>
+          <li><a href="http://www.cs.brown.edu/~sk/">Shriram Krishnamurthi</a>,
+           Nov 2006.</li>
+          <li><a href="http://pauillac.inria.fr/~tmartine/">Thierry Martinez</a>,
+           Mar&ndash;Aug 2006.</li>
+          <li><a href="http://www.cit.gu.edu.au/~rwt/">Rodney Topor</a>,
+           Sep&ndash;Dec 2005.
+	   Rodney taught us about
+	   <a href="http://www.cit.gu.edu.au/~rwt/uoe/">transactions</a>.</li>
+        </ul>
+      </p>
+      <p> <h3>Undergraduate projects</h3>
+         <ul>
+          <li>Building Bobcat - a web content management system in Links.
+           Simon Vansintjan (2010).</li>
+          <li>Web Menace: Links demonstration of a classic learning machine.
+           Samuel Corbett (2009).</li>
+          <li><a href="papers/undergrads/steven.pdf">Compiling Links server-side code</a>.
+           Steven Holmes (2009).</li>
+          <li><a href="papers/undergrads/tom.pdf">LODE: an online IDE for Links in Links</a>.
+           Carl Andersson (2008).</li>
+          <li>Online Scrabble in Links.
+           Ashvin Jayaram (2008).</li>
+          <li>Building web 2.0 applications in Links: Speed dependent automatic zooming for web applications.
+           Sjoerd van Roosmalen (2008).</li>
+          <li><a href="papers/undergrads/steve.pdf">Creating linksCollab: an assessment of Links as a web development language</a>.
+           Steve Strugnell (2008).</li>
+         </ul>
+      </p>
+      <p> <h3>MSc projects</h3>
+         <ul>
+           <li><a href="http://project-archive.inf.ed.ac.uk/msc/20150206/msc_proj.pdf">Handlers for Algebraic Effects in Links</a>
+             Daniel Hillerström (2015). </li>
+          <li>
+            <a href="papers/mscs/chifeng.pdf">
+             Functional reactive animation in SVG for the web via Links
+            </a>
+            Chi-Feng Chou (2011).
+          </li>
+          <li>
+           <a href="http://www.inf.ed.ac.uk/publications/thesis/offline/IM080579.pdf">
+             Implementing the Java Pet Store in Links:
+             An assessment of Links as an effective platform for building web applications
+           </a>.
+           Gabriel Tellez (2008).</li>
+          <li>Building biological database applications using Links.
+           Ravi Shankar Dangeti (2008).</li>
+          <li><a href="http://infoscience.epfl.ch/record/84805">The SLinks language</a>.
+           Gilles Dubochet (2005).</li>
+         </ul>
+      </p>
+      <p> <h3>Interns</h3>
+         <ul>
+          <li>Austėja Elvina Brasiūnaitė, Summer 2014.
+              Elvina helped us to develop session types in Links by building and testing lots of examples.</li>
+          <li>Dariusz Jędrzejczak, Summer 2014. Dariusz significantly speeded up JavaScript compilation in Links and
+              built and evaluated the performance of a number of games written in Links.</li>
+          <li>Gabriel Radanne, Summer 2012. Gabriel extended the Links to OCaml compiler developed by
+              <a href="papers/undergrads/steven.pdf">Steven Holmes</a>
+              to handle <a href="http://homepages.inf.ed.ac.uk/slindley/papers/effquot.pdf">database queries</a>.</li>
+         </ul>
+      </p>
+      <p> <h3>Security</h3>
+         <ul>
+          <li><a href="http://www.cs.umd.edu/projects/PL/selinks/">SELinks</a></li>
+          <li><a href="http://www.cl.cam.ac.uk/~ib249/research/links-tldi09-submission.pdf">TinyLinks</a></li>
+         </ul>
+      </p>
+         
+      <p> <h3>Talks</h3>
+        <ul>
+         <li><a href="http://homepages.inf.ed.ac.uk/wadler/papers/links/links-oz.pdf">Talk slides</a> (Melbourne, 2 Feb 2006)</li>
+         <li><a href="http://homepages.inf.ed.ac.uk/wadler/papers/links/links-padl.pdf">Talk slides</a> (PADL, 9 Jan 2006)</li>
+	 <li><a href="http://homepages.inf.ed.ac.uk/wadler/linksetaps/">Links meeting at ETAPS</a> (Edinburgh, 6 Apr 2005)</li>
+	 <li><a href="http://homepages.inf.ed.ac.uk/wadler/papers/links/links-cambridge.pdf">Talk slides</a> (Cambridge, 9 Feb 2005)</li>
+        </ul>
+      </p>
+      </div>
+      <hr>
+
+<!-- Created: Thu Oct 20 11:07:22 BST 2005 -->
+<!-- hhmts start -->Last modified: Wed Mar 18 19:05:04 GMT 2015 <!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,2300 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Links Syntax</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#links_syntax">Links Syntax</a></li>
+	<ul>
+
+		<li><a href="#comments">Comments</a></li>
+		<li><a href="#literals">Literals</a></li>
+		<li><a href="#arithmetic">Arithmetic</a></li>
+		<li><a href="#lists">Lists</a></li>
+		<li><a href="#pattern_matching_on_lists">Pattern matching on lists</a></li>
+		<li><a href="#integer_ranges">Integer Ranges</a></li>
+		<li><a href="#pairs__tuples__and_records">Pairs, Tuples, and Records</a></li>
+		<ul>
+
+			<li><a href="#record_modifications">Record modifications</a></li>
+		</ul>
+
+		<li><a href="#polymorphic_variants">Polymorphic variants</a></li>
+		<li><a href="#xml_quasiquotes">XML Quasiquotes</a></li>
+		<li><a href="#forms">Forms</a></li>
+		<li><a href="#comparisons_and_boolean_expressions">Comparisons and Boolean Expressions</a></li>
+		<li><a href="#conditionals">Conditionals</a></li>
+		<li><a href="#variables">Variables</a></li>
+		<li><a href="#blocks">Blocks</a></li>
+		<li><a href="#functions">Functions</a></li>
+		<li><a href="#loops__list_comprehensions_">Loops (List Comprehensions)</a></li>
+		<ul>
+
+			<li><a href="#filtering_comprehensions">Filtering comprehensions</a></li>
+			<li><a href="#sorting_comprehensions">Sorting comprehensions</a></li>
+			<li><a href="#multigenerator_comprehensions">Multi-generator comprehensions</a></li>
+		</ul>
+
+		<li><a href="#database_access">Database access</a></li>
+		<ul>
+
+			<li><a href="#using_tables">Using tables</a></li>
+			<li><a href="#database_modifications">Database modifications</a></li>
+			<li><a href="#table_constraints">Table constraints</a></li>
+			<li><a href="#database_abstraction">Database abstraction</a></li>
+			<li><a href="#query_blocks">Query blocks</a></li>
+		</ul>
+
+		<li><a href="#structural_pattern_matching">Structural pattern matching</a></li>
+		<li><a href="#regular_expressions">Regular expressions</a></li>
+		<ul>
+
+			<li><a href="#special_feature__regexes_and_the_database">Special feature: regexes and the database</a></li>
+			<li><a href="#limitations">Limitations</a></li>
+		</ul>
+
+	</ul>
+
+	<li><a href="#typing">Typing</a></li>
+	<ul>
+
+		<li><a href="#types_in_links">Types in Links</a></li>
+		<li><a href="#base_types">Base types</a></li>
+		<li><a href="#type_annotations">Type annotations</a></li>
+		<li><a href="#type_aliases">Type aliases</a></li>
+		<li><a href="#type_variables">Type variables</a></li>
+		<li><a href="#function_types_and_effects">Function types and effects</a></li>
+		<li><a href="#kinds_and_subkinding">Kinds and subkinding</a></li>
+	</ul>
+
+	<li><a href="#features">Features</a></li>
+	<ul>
+
+		<li><a href="#formlets">Formlets</a></li>
+		<li><a href="#concurrency">Concurrency</a></li>
+		<li><a href="#located_code_and_remote_procedure_calls">Located code and remote procedure calls</a></li>
+		<li><a href="#handling_user_actions">Handling User Actions</a></li>
+		<ul>
+
+			<li><a href="#interpreting_the_event">Interpreting the Event</a></li>
+		</ul>
+
+		<li><a href="#modifying_the_web_page">Modifying the Web Page</a></li>
+		<ul>
+
+			<li><a href="#dom_operations">DOM operations</a></li>
+		</ul>
+
+		<li><a href="#xml_operations">XML operations</a></li>
+		<li><a href="#cookies">Cookies</a></li>
+	</ul>
+
+	<li><a href="#library_functions">Library functions</a></li>
+	<ul>
+
+		<li><a href="#explicit_type_conversions">Explicit type conversions</a></li>
+		<li><a href="#negation">Negation</a></li>
+		<li><a href="#character_classification">Character classification</a></li>
+		<li><a href="#case_conversion">Case conversion</a></li>
+		<li><a href="#floating_point_functions">Floating point functions</a></li>
+		<li><a href="#miscellaneous">Miscellaneous</a></li>
+	</ul>
+
+	<li><a href="#standard_library__prelude_">Standard library (prelude)</a></li>
+	<ul>
+
+		<li><a href="#list_utilities">List utilities</a></li>
+		<li><a href="#webrelated_features">Web-related features</a></li>
+		<li><a href="#formlet_library">Formlet library</a></li>
+	</ul>
+
+	<li><a href="#running_links">Running links</a></li>
+	<ul>
+
+		<li><a href="#the_interactive_shell">The interactive shell</a></li>
+		<ul>
+
+			<li><a href="#directives">Directives</a></li>
+		</ul>
+
+		<li><a href="#configuration_settings">Configuration settings</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<hr />
+<h1><a name="links_syntax">Links Syntax</a></h1>
+<p>
+</p>
+<h2><a name="comments">Comments</a></h2>
+<p>Comments are introduced by a hash mark, <code>#</code>, and continue for the
+rest of the line.</p>
+<p>
+</p>
+<h2><a name="literals">Literals</a></h2>
+<ul>
+<li>
+<p>Integers: <code>2</code>, <code>7</code></p>
+</li>
+<li>
+<p>Floating point numbers: <code>3.</code>, <code>14.5</code>,</p>
+</li>
+<li>
+<p>Booleans: <code>true</code>, <code>false</code>.</p>
+</li>
+<li>
+<p>Strings: <code>&quot;Cappuccino&quot;</code>, <code>&quot;\&quot;I've dropped the toothpaste,\&quot; Tom said,
+crestfallen.&quot;</code>.</p>
+</li>
+<li>
+<p>Characters: <code>'a'</code>, <code>'9'</code>, <code>'\012'</code>.</p>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="arithmetic">Arithmetic</a></h2>
+<p>Links supports the standard arithmetic operators.</p>
+<pre>
+ +                : (Int, Int) -&gt; Int
+ -                : (Int, Int) -&gt; Int
+ *                : (Int, Int) -&gt; Int
+ /                : (Int, Int) -&gt; Int
+ ^                : (Int, Int) -&gt; Int
+ mod              : (Int, Int) -&gt; Int
+ *.               : (Float, Float) -&gt; Float
+ +.               : (Float, Float) -&gt; Float
+ -.               : (Float, Float) -&gt; Float
+ /.               : (Float, Float) -&gt; Float
+ ^.               : (Float, Float) -&gt; Float</pre>
+<p>As Links does not yet have any support for overloading, the floating
+point versions are distinguished using the ``.'' suffix. The arithmetic
+operators can be used infix as is or prefix when enclosed in
+parentheses.</p>
+<pre>
+  1+2*3</pre>
+<p>returns <code>7</code>.</p>
+<pre>
+  (*.)(6.0, 7.)</pre>
+<p>returns <code>42.</code>.</p>
+<p>
+</p>
+<h2><a name="lists">Lists</a></h2>
+<p>A list is a finite sequence of values, constructed using <code>[]</code>
+(pronounced ``nil'') and <code>::</code> (pronounced ``cons'').</p>
+<pre>
+   1 :: 4 :: 9 :: 16 :: []</pre>
+<p>A list can be created directly by wrapping a series of comma-separated
+expressions between brackets:</p>
+<pre>
+    [1, 4, 9, 16]
+    
+    [&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;]</pre>
+<pre>
+    []</pre>
+<pre>
+    x = true;
+    [true, false, x, true]</pre>
+<p>Note that all elements of a list must be of the same type.</p>
+<p>Lists support the ``concatenate'' operation, denoted by two plus
+characters:</p>
+<pre>
+    [1, 2] ++ [3, 4, 5] == [1, 2, 3, 4, 5]</pre>
+<p>And they're comparable, with <a href="#item__3d_3d"><code>==</code></a>, as you can see!</p>
+<p>The ``Cons'' operator (<code>::</code>) appends an element to the start of a
+list.</p>
+<pre>
+  links&gt; 1::[2,3,4,5];
+  [1, 2, 3, 4, 5] : [Int]</pre>
+<p>The head (<code>hd</code>) and tail (<code>tl</code>) functions each take a single list as
+an argument. They return respectively: the first element of the list;
+and the list consisting of all elements but the first from the
+original list.</p>
+<pre>
+  links&gt; hd([1,2,3]);
+  1 : Int
+  links&gt; tl([1,2,3]);
+  [2, 3] : [Int]</pre>
+<p>The take and drop functions return respectively: the first n elements of
+a list; and all but the first n elements of a list.</p>
+<pre>
+  links&gt; take(2,[1,2,3]);
+  [1, 2] : [Int]
+  links&gt; drop(2,[1,2,3]);
+  [3] : [Int]</pre>
+<p>
+</p>
+<h2><a name="pattern_matching_on_lists">Pattern matching on lists</a></h2>
+<p>Cons and nil can also be used in patterns, to deconstruct lists:</p>
+<pre>
+  switch (s) {
+    case []    -&gt; Empty
+    case x::xs -&gt; NonEmpty
+  }</pre>
+<p>
+</p>
+<h2><a name="integer_ranges">Integer Ranges</a></h2>
+<p>The syntax <code>[a .. b]</code> constructs a list of all the integers between
+<a href="#item_a"><code>a</code></a> and <code>b</code>, inclusive. The result is empty if <a href="#item_a"><code>a</code></a> is greater than
+<code>b</code>.</p>
+<p>
+</p>
+<h2><a name="pairs__tuples__and_records">Pairs, Tuples, and Records</a></h2>
+<p>A tuple is a finite sequence of values, possibly of different
+types. An <em>n</em>-tuple is constructed by enclosing <em>n</em> expressions in
+parenthesis and separating them with commas:</p>
+<pre>
+   (a, &quot;OK&quot;)
+   (true, &quot;a string&quot;, 42)</pre>
+<p>A record is something like a tuple, but its fields are indexed by
+field names rather than integer indices. A record is written like a
+tuple but with fieldnames preceeding the fields:</p>
+<pre>
+  (lastname=&quot;Bond&quot;, firstname=&quot;James&quot;, license=&quot;To kill&quot;)</pre>
+<p>Field names are not enclosed in quotes and are not expressions. They
+are not evaluated. Note that, whereas the content of a field can be
+any expression, the field name must be literally present when
+constructing a record. For example:</p>
+<pre>
+  var item = (drinkname = &quot;latte&quot;, price = 2.0 +. 0.5)          # OK
+  var item = (&quot;drink&quot; + &quot;name&quot; = &quot;latte&quot;, price = 2.0 +. 0.5)   # NOT OK</pre>
+<p>You can access the fields of a record by <em>projecting</em> them, using 
+the dot notation:</p>
+<pre>
+  item.drinkname == &quot;latte&quot;
+  (lastname=&quot;Bond&quot;, firstname=&quot;James&quot;).lastname == &quot;Bond&quot;</pre>
+<p>
+</p>
+<h3><a name="record_modifications">Record modifications</a></h3>
+<p>You can <em>add</em> a field to an arbitrary record using the <em>record
+extension</em> operation. This operation works only when the field is not
+already present in the record. As an example:</p>
+<pre>
+  (caffeineContent = 60 | item)</pre>
+<p>Given the definition from above, this would yield a value</p>
+<pre>
+  (caffeineContent = 60, drinkname = &quot;latte&quot;, price = 2.5)</pre>
+<p>To <em>overwrite</em> the value in a field, when that field is already
+present, use the ``with'' notation:</p>
+<pre>
+  (item with drinkname = &quot;capuccino&quot;)</pre>
+<p>This yields</p>
+<pre>
+  (drinkname=&quot;capuccino&quot;, price=2.5)</pre>
+<p>Records do not need to be declared; a given field name can appear in
+any record. The only requirement is that a given field is used with a
+consistent type, insofar as the the values may interact. It is
+acceptable to use a particular field name with different types, as
+long as the two are used separately--that is, as long as the same
+value will never be used in differently-typed expressions.</p>
+<p>
+</p>
+<h2><a name="polymorphic_variants">Polymorphic variants</a></h2>
+<p>A ``variant type'' is one that uses explicit ``tags'' (or ``labels'') to
+distinguish different sets of possible values as to their meaning. For
+example, a mode of transport may be either Automobile or Camel. If it
+is Automobile, we want to know what fuel it takes; if it is Camel, we
+want to know how many humps it has. In Links, values like these can be
+expressed as follows:</p>
+<pre>
+  Automobile(Diesel)
+  Automobile(Unleaded)
+  Camel(2)</pre>
+<p>The <em>type</em> that includes such values is written as follows:</p>
+<pre>
+  [|Automobile: [|Diesel:() | Unleaded:() | Biodiesel:()|] |
+    Camel: Int |]</pre>
+<p>The boxy brackets <code>[| |]</code> delimit a variant type, and variant labels
+are separated by a pipe <code>|</code>. After each variant label, separated by a
+colon <code>:</code>, is the type of its contents--a Camel has a number of humps
+so its content type is <code>Int</code>, whereas the Automobile content type is
+another variant type, <code>[|Diesel | Unleaded|]</code>.</p>
+<p>In Links, <em>a variant tag always begins with a capital letter</em>. Any
+string beginning with a capital letter, used in a value context,
+denotes a variant label.</p>
+<p>To inspect a variant value, use <em>pattern matching</em>. Pattern matching is
+accomplished using the <code>switch</code> form, which has a target expression
+and a case for each variant label. The following expression determines
+the effective number of humps of a transport (autos have no humps):</p>
+<pre>
+  switch (target) {
+    case Automobile(fuelType) -&gt; 0
+    case Camel(humpCount) -&gt; humpCount
+  }</pre>
+<p>The expression <code>expr</code> is evaluated to produce a value of variant
+type; then the label is examined and one of the cases is chosen. The
+lowercase word following the variant label in a case is bound to the
+content of the target value (provided that case actually matches the
+target). This allows us to use the variable <code>humpCount</code> within the
+body of the <code>Camel</code> case. The body of a case (everything between the
+<code>-&gt;</code> and the next case (if any) or the end of the switch) produces
+the result of the whole switch expression, and all case bodies of a
+switch must have the same type.</p>
+<p>Type-checking will also ensure that all possible cases are matched by
+the <code>switch</code> expression. To handle arbitrary variant values, you can
+add an open case to the end of the switch:</p>
+<pre>
+  switch (target) {
+    case Automobile(fuelType) -&gt; 0
+    case Camel(humpCount) -&gt; humpCount
+    case other -&gt; 0
+  }</pre>
+<p>Since <code>other</code> begins with a lowercase letter, it is a variable, which
+matches any value. Unlike the variables in the previous cases, which
+are wrapped inside variant labels, <code>other</code> is used here as the
+complete pattern to match for its case, so it will match
+anything. Patterns are tried in the order they are given, so the
+<code>other</code> case will not by selected unless the previous cases do not
+match.</p>
+<p>Here we assume that nothing other than a camel has humps.</p>
+<p>
+</p>
+<h2><a name="xml_quasiquotes">XML Quasiquotes</a></h2>
+<p>Also called ``quasis,'' these are the principal way to embed XML values
+within your program. A quasi is introduced by an XML start-tag such as
+<code>&lt;foo&gt;</code>. Inside a quasi, you may escape from the XML mode
+back into Links syntax, by enclosing the Links code within braces { }.
+When the quasi is evaluated, all its escaped expressions will be
+evaluated, and their values will be embedded within the constructed
+XML value. For example:</p>
+<pre>
+    &lt;html&gt;
+      &lt;ul&gt;
+        &lt;li&gt; First item: {item1} &lt;/li&gt;
+        &lt;li&gt; Second item: {item2} &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/html&gt;</pre>
+<p>Within an XML quasi, a variety of special features can be used to
+handle browser events. See <a href="#handling_user_actions">Handling User Actions</a>, below, for more
+information on these features.</p>
+<p>To introduce a <em>forest</em> of XML nodes that have no mutually enclosing
+XML element, use the special <code>&lt;#&gt;...&lt;/#&gt;</code> syntax:</p>
+<pre>
+    &lt;#&gt;
+      Name: &lt;b&gt;{name}&lt;/b&gt;
+    &lt;/#&gt;</pre>
+<p>Here, a <em>sequence</em> of nodes (first, an XML text node, and then a &lt;b&gt;
+element) becomes as a single expression. This value can be included
+directly in other XML quasis:</p>
+<pre>
+    var nameLine = &lt;#&gt; Name: &lt;b&gt;{name}&lt;/b&gt; &lt;/#&gt;;
+    &lt;div&gt;
+      {nameLine} &lt;br /&gt;
+      The Links Team
+    &lt;/div&gt;</pre>
+<p>
+</p>
+<h2><a name="forms">Forms</a></h2>
+<p>Links provides two special attributes for programming with HTML forms:
+<code>l:name</code>, which binds the value of an input field to a variable, and
+<code>l:onsubmit</code>, with which you can supply an expression to be evaluated
+when the form is submitted.</p>
+<pre>
+   &lt;form l:onsubmit=&quot;{say_hello(personName)}&quot;&gt;
+      What is your name? 
+      &lt;input l:name=&quot;{personName}&quot;/&gt;
+   &lt;/form&gt;</pre>
+<p>The <code>personName</code> variable bound by the <code>l:name</code> attribute is in scope in
+the <code>l:onsubmit</code> expression, which may also contain references to
+other variables in the enclosing scope.  The values of these variables
+are passed from form to form automatically.</p>
+<p>Unfortunately, the <code>l:</code> mechanism does not support any abstraction in
+building forms.  For a more abstraction-friendly construct, see
+<a href="#formlets">Formlets</a>, describing a mechanism for abstracting form fragments.</p>
+<p>
+</p>
+<h2><a name="comparisons_and_boolean_expressions">Comparisons and Boolean Expressions</a></h2>
+<p>Comparisons are binary operations that yield a true/false value.</p>
+<ul>
+<li><strong><a name="item__3d_3d">==</a></strong>
+
+<p>True iff the operands evaluate to the same value.</p>
+</li>
+<li><strong><a name="item__3c_3e">&lt;&gt;</a></strong>
+
+<p>True iff the operands evaluate to different values.</p>
+</li>
+<li><strong><a name="item__3c">&lt;</a></strong>
+
+<p>True iff the left operand's value is less than the right operand's</p>
+</li>
+<li><strong><a name="item__3e">&gt;</a></strong>
+
+<p>True iff the right operand's value is less than the left operand's</p>
+</li>
+<li><strong><a name="item__3c_3d">&lt;=</a></strong>
+
+<p>True iff the left operand's value is less than or equal to the right
+operand's</p>
+</li>
+<li><strong><a name="item__3e_3d">&gt;=</a></strong>
+
+<p>True iff the right operand's value is less than or equal to the left
+operand's</p>
+</li>
+</ul>
+<p>Boolean expressions can be combined using the boolean operators:</p>
+<ul>
+<li><strong><a name="item__26_26">&amp;&amp;</a></strong>
+
+</li>
+<li><strong><a name="item__7c_7c">||</a></strong>
+
+</li>
+<li><strong><a name="item_not">not</a></strong>
+
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="conditionals">Conditionals</a></h2>
+<p>A conditional expression has a condition, a consequent, and an else
+clause. None of the three may be omitted.</p>
+<pre>
+    if (x == y)
+        expr1
+    else
+        expr2</pre>
+<p>Curly braces can be wrapped around either clause, no matter how many
+sub-expressions they contain, and <em>must</em> be so wrapped if you want
+the clause to consist of more than one semicolon-separated expression.</p>
+<p>Note that an <code>if</code>-<code>else</code> expression <em>always</em> returns a value in
+Links; the return values of the two branches must be of the same type,
+and both branches are required.</p>
+<p>
+</p>
+<h2><a name="variables">Variables</a></h2>
+<p>Variables are single-assignment in Links. The form</p>
+<pre>
+    var x = expr;
+    etc</pre>
+<p>evaluates <code>expr</code> and binds the name <code>x</code> to the resulting value,
+within the expression <code>etc</code>.</p>
+<p>Variable assignments have block scope. The following example</p>
+<pre>
+    var x = 1;
+    if (condition) {
+      var x = 2
+    } else {
+      var x = 3
+    };
+    print int_to_string(x);</pre>
+<p>prints <code>1</code> because the assignments to <code>x</code> within the if clauses only
+bind within those clauses. If you want the value printed to depend on
+the condition, you should assign to <code>x</code> from the result of the whole
+<code>if</code> expression:</p>
+<pre>
+    var x = if (condition) {
+      2
+    } else {
+      3
+    };
+    print int_to_string(x);</pre>
+<p>
+</p>
+<h2><a name="blocks">Blocks</a></h2>
+<p>A sequence of variable bindings separated by semicolons is evaluated
+in text order, binding each value to the corresponding name in what
+follows. Variables cannot be rebound; later bindings of the same name
+shadow preceding ones:</p>
+<pre>
+    var x = 1;
+    var y = 2;
+    var x = 2;
+    var z = x + y;    # z is now bound to 4</pre>
+<p>The scope of a binding is strictly within its immediate block. As a
+result, the following code may not do what you expect:</p>
+<pre>
+    var x = 0;
+    if (a == b)
+        var x = 1;
+    else
+        var x = 2;
+    alert(x);</pre>
+<p>The value printed by <code>alert</code> will be 0. That's because the other two
+bindings only bind x within the corresponding clauses of the
+conditional. This may come as a surprise to programmers used to
+imperative languages.</p>
+<p>
+</p>
+<h2><a name="functions">Functions</a></h2>
+<p>Functions can be named or anonymous. Named functions look like this:</p>
+<pre>
+    fun foo(x, y, z)
+    {
+        # ... body 
+    }</pre>
+<p>Anonymous functions just omit the name: <code>fun (x) { x + 1 }</code> is an
+expression that evaluates to an anonymous function value.</p>
+<p>Function values, whether named or anonymous, are lexical closures; any
+variables free in the body must refer to bindings from a surrounding
+lexical scope. The smallest surrounding scope is chosen.</p>
+<p>A function can be called by using its name, followed by a list of
+arguments in parentheses:</p>
+<pre>
+    foo(1, 2, 7)</pre>
+<p>This works whether <code>foo</code> is a function defined with a name, as <code>fun
+foo(...) {...}</code>, or a variable bound to a functional value, as</p>
+<pre>
+    var inc = fun (x) {x + 1};
+    inc(7)</pre>
+<p>This block returns <code>8</code>.</p>
+<p>Any expression that evaluates to a function value can be called:</p>
+<pre>
+    (if (true) fun (x) { x + 1 }
+     else fun (x) { x + 2 })(3)</pre>
+<p>
+</p>
+<h2><a name="loops__list_comprehensions_">Loops (List Comprehensions)</a></h2>
+<p>The principal loop construct in Links is the list comprehension:</p>
+<pre>
+    for (x &lt;- source)
+       body</pre>
+<p>Both the source and the body should be expressions that evaluate to
+lists.</p>
+<p>The value of a comprehension is the concatenation of all the lists
+produced by evaluating the body, once for each element of <em>source</em>, and
+binding that element to the variable <code>x</code>. For example:</p>
+<pre>
+    var source_list = [1, 2, 3];
+    for (x &lt;- source_list)
+        [ x*x ]</pre>
+<p>constructs a list of the squares of the values in <code>source_list</code>. Note
+that more than one value can be included in the body list:</p>
+<pre>
+    var source_list = [2, 3, 7, 8, 9, 55];
+    for (n &lt;- source_list)
+        if (odd(n))
+           [n, n+1]
+        else
+           [n]</pre>
+<p>This example returns <code>[2, 3, 4, 7, 8, 8, 9, 10, 55, 56]</code>.</p>
+<p>Other forms of looping can be implemented using tail recursion.</p>
+<p>
+</p>
+<h3><a name="filtering_comprehensions">Filtering comprehensions</a></h3>
+<p>A comprehension can be filtered using the <code>where</code> clause.</p>
+<pre>
+    var source = [2, 3, 4, 5, 6, 7];
+    for (x &lt;- source)
+    where (odd(x))
+      [x+1]</pre>
+<p>returns <code>[4, 6, 8]</code>.</p>
+<p>A <code>where</code> clause is equivalent to a condition nested within a
+comprehension:</p>
+<pre>
+    for (x &lt;- src)
+    where (pred)
+      expr</pre>
+<p>is equivalent to</p>
+<pre>
+    for (x &lt;- src)
+      if (pred)
+        expr
+      else []</pre>
+<p><code>where</code> is a clause on <code>for</code> comprehensions: it cannot be used
+outside of a <code>for</code>.</p>
+<p>
+</p>
+<h3><a name="sorting_comprehensions">Sorting comprehensions</a></h3>
+<p>The <code>orderby</code> clause on <code>for</code> comprehensions is used to sort the
+source before evaluating the body.</p>
+<p>For example, suppose ``models'' is a list declared previously with type
+<code>[(release_year:Int,model_number:Int,model_name:String)]</code>, describing
+models of an automobile make. Then the following will return a list of
+pairs describing the models, ordered by their year of release:</p>
+<pre>
+    for (m &lt;- models)
+    orderby (m.release_year)
+      [(m.model_number, m.model_name)]</pre>
+<p>
+</p>
+<h3><a name="multigenerator_comprehensions">Multi-generator comprehensions</a></h3>
+<p>A comprehension can draw elements from more than one list. For each
+element produced by the first <em>generator</em>, Links iterates over all
+the items produced by the remaining generators.</p>
+<p>For example:</p>
+<pre>
+   links&gt;
+     for (fruit &lt;- [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;], i &lt;- [1..4])
+       [(i, fruit)];
+   [(1, &quot;apple&quot;),  (2, &quot;apple&quot;),  (3, &quot;apple&quot;),  (4, &quot;apple&quot;),
+    (1, &quot;banana&quot;), (2, &quot;banana&quot;), (3, &quot;banana&quot;), (4, &quot;banana&quot;),
+    (1, &quot;orange&quot;), (2, &quot;orange&quot;), (3, &quot;orange&quot;), (4, &quot;orange&quot;)] : [(Int, String)]</pre>
+<p>You can also impose an order on all the elements produced by the
+series of generators in a comprehension header, as in:</p>
+<pre>
+   links&gt;
+     for (fruit &lt;- [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;], i &lt;- [1..4])
+     orderby (fruit)
+       [(i, fruit)];
+   [(1, &quot;apple&quot;),  (2, &quot;apple&quot;),  (3, &quot;apple&quot;),  (4, &quot;apple&quot;),
+    (1, &quot;banana&quot;), (2, &quot;banana&quot;), (3, &quot;banana&quot;), (4, &quot;banana&quot;),
+    (1, &quot;orange&quot;), (2, &quot;orange&quot;), (3, &quot;orange&quot;), (4, &quot;orange&quot;)] : [(Int, String)]</pre>
+<p>Links will produce a list of tuple elements as dictated by the
+generators, then sort them, and finally evaluate the body expression
+for each element produced. Note that it is the source elements, <em>not</em>
+the body elements, which are sorted.</p>
+<p>The effect of multi-generator comprehensions is much like that of
+nested comprehensions: the comprehension</p>
+<pre>
+     for (fruit &lt;- [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;], i &lt;- [1..4])
+       [(i, fruit)];</pre>
+<p>behaves just like this one:</p>
+<pre>
+     for (fruit &lt;- [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;])
+       for (i &lt;- [1..4])
+         [(i, fruit)];</pre>
+<p>But multi-generator comprehensions are different from the nested
+counterparts when it comes to clauses such as <code>orderby</code>. This is
+because the <code>orderby</code> clause sorts the list of tuples produced by all
+the generators in the <em>most recent</em> comprehension header. When using
+nested single-generator comprehesions, you are sorting one series of
+elements which is then collected by another comprehension, for a
+result than may not obey the desired ordering. For example,</p>
+<pre>
+   links&gt; for (fruit &lt;- [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;])
+            for (i &lt;- [1..4])
+            orderby (i)
+              [(i, fruit)];
+   [(1, &quot;apple&quot;),  (2, &quot;apple&quot;),  (3, &quot;apple&quot;),  (4, &quot;apple&quot;),
+    (1, &quot;banana&quot;), (2, &quot;banana&quot;), (3, &quot;banana&quot;), (4, &quot;banana&quot;),
+    (1, &quot;orange&quot;), (2, &quot;orange&quot;), (3, &quot;orange&quot;), (4, &quot;orange&quot;)] : [(Int, String)]</pre>
+<p>
+</p>
+<h2><a name="database_access">Database access</a></h2>
+<p>To access the database, use <em>database</em> and <em>table expressions</em>,
+which produce first-class values representing, respectively, database
+connections and tables within such connected databases.</p>
+<p>To connect to a given database instance using a particular database
+driver, use a <code>database</code> expression.</p>
+<pre>
+  database &lt;database-name&gt; &lt;driver-name&gt; &lt;parameter-string&gt;;</pre>
+<p>The <code>&lt;parameter string&gt;</code> is a colon-separated string whose
+interpretation is driver-dependent, but which usually includes the
+hostname, port, username and password. For example, to connect to the
+database <code>ice_cream</code> using the <code>mysql</code> driver, using the default
+host name and the port 3306, and bind the resulting connection to the
+variable <code>db</code>, use</p>
+<pre>
+  var db = database &quot;ice_cream&quot; &quot;mysql&quot; &quot;:3306:web:&quot;;</pre>
+<p>The driver and parameter string default to the configuration values
+<code>database_driver</code> and <code>database_args</code>, so at a minimum you need only
+give the instance name:</p>
+<pre>
+  var db = database &quot;ice_cream&quot;;</pre>
+<p>Supported drivers include <code>postgres</code>, <code>mysql</code> and <code>sqlite</code>. The
+<code>&lt;parameter-string&gt;</code> field is presently only used by the
+postgres and mysql drivers and has the form:</p>
+<pre>
+  host:port:user:password</pre>
+<p>When a database expression is evaluated on the server a connection is
+automatically opened if one is not already open.</p>
+<p>Table-handles are created using <code>table</code> expressions, which need the
+table's name, its type, as a record, and the database connection (a
+value produced by a <code>database</code> expression as above):</p>
+<pre>
+  table &lt;table-name&gt; with &lt;row-type&gt; from &lt;database-connection&gt;;</pre>
+<p>For example, to create a handle to the table <code>ice_cream</code> with fields
+<code>i</code> and <code>f</code> both of type <code>Int</code> associated with the database <code>db</code>,
+and bind it to the variable <code>fac_table</code>, use:</p>
+<pre>
+  var parlors = table &quot;ice_cream_parlors&quot; 
+                with (name : String, fans : Int) from db;</pre>
+<p>The variable <code>parlors</code> then has type <code>TableHandle((name : String,
+fans : Int), (name : String, fans : Int), (name : String, fans :
+Int))</code>.  The three arguments to the <code>TableHandle</code> type constructor
+together identify the type of a row and its constraints (See <a href="#table_constraints">Table constraints</a>).</p>
+<p>
+</p>
+<h3><a name="using_tables">Using tables</a></h3>
+<p>To iterate over the items of a table--or just to fetch one row--use
+<code>for</code> comprehensions.</p>
+<p>Since a table-handle in Links is different from a list, we cannot
+simply draw elements directly from a table as we draw them from a
+list. But a special form of generator accepts a table-handle as its
+source:</p>
+<pre>
+  var parlors = table &quot;ice_cream_parlors&quot; 
+                with (name : String, fans : Int) from db;
+  for (p &lt;-- parlors)
+  where (p.flavors &gt; 1)
+    [x]</pre>
+<p>This comprehension selects all the elements from the
+<code>ice_cream_parlors</code> table that serve more than one flavor.</p>
+<p>The special <em>long-arrow generator</em> <code>&lt;--</code> accepts a table-handle,
+and not a list, as its right-hand side.</p>
+<p>The long-arrow generator also specifies that the comprehension in
+which it participates <em>must</em> be executed by a single SQL query at run
+time. When an expression is executed as a query, it should be
+relatively efficient because, for example, any comprehension filtering
+should be performed by the database, before involving the Links
+runtime system. The database system may be able to do this efficiently
+by using its indexes.</p>
+<p>When you don't want to specify that an expression becomes a query, you
+can extract all the rows of a table directly using the special
+function <code>asList</code>. The <code>asList</code> function takes a single argument, a
+table handle, and produces a list of all the rows in the table at the
+time when the function is applied.</p>
+<p>For example, you may write</p>
+<pre>
+  for (p &lt;-- parlors)
+   where (p.flavors &lt;= 20)
+    [(name = p.name)]</pre>
+<p>to extract from the <code>parlors</code> table the names of those with
+fewer than 20 flavors. This might be compiled into an SQL query such
+as</p>
+<pre>
+  select p.name as name from parlors as p
+  where p.flavors &lt;= 20</pre>
+<p>The <code>asList</code> function extracts an entire table at once:</p>
+<pre>
+  sig asList : (TableHandle((|a::Base),_,_)) -&gt; [(|a::Base)]
+  fun asList(t) {for (z &lt;-- t) [z]}</pre>
+<p>Thus the following expression gives the same result as the previous
+query for selecting shops with fewer than 20 flavors, but it does more
+work outside the database system:</p>
+<pre>
+  for (p &lt;- asList(parlors))
+   where (p.flavors &lt;= 20)
+    [(name = p.name)]</pre>
+<p>It would use the following simple SQL to get its raw data:</p>
+<pre>
+  select * from parlors</pre>
+<p>and the Links runtime system would filter the data itself.</p>
+<p>
+</p>
+<h3><a name="database_modifications">Database modifications</a></h3>
+<p>Links can also modify database tables using insert, update and delete
+operations, which work similarly to the corresponding SQL statements.</p>
+<p>For example, the Links expression</p>
+<pre>
+  insert t values (f1, ..., fk) rs</pre>
+<p>inserts the list of rows <code>rs</code> into the table <code>t</code> where <code>rs</code> must
+be a list of records with fields <code>f1, ... fk</code>.</p>
+<p>The Links expression</p>
+<pre>
+  update (var r &lt;-- t)
+   where condition
+   set (f1 = v1, ..., fn = vn)</pre>
+<p>updates the rows of table <code>t</code> that satisfy <code>condition</code> by setting each
+field <code>fi</code> to <code>vi</code>.</p>
+<p>The Links expression</p>
+<pre>
+  delete (var r &lt;-- t)
+   where condition</pre>
+<p>deletes the rows of table <code>t</code> that satisfy <code>condition</code>.</p>
+<p>
+</p>
+<h3><a name="table_constraints">Table constraints</a></h3>
+<p>Database fields can be given two kinds of special features: they can
+be made <em>read-only</em> and they can be <em>defaulted</em> or given default
+values when inserting.</p>
+<p>A read-only field must not be included in an insert or an update. A
+defaulted field need not, and cannot, be included in an insert or
+update command.</p>
+<p>To enable these special features on a table field, add a <code>where</code>
+clause to the table expression that lists field names with the
+corresponding keyword. For example:</p>
+<pre>
+  table &quot;people&quot; with (id:Int, name:String, nationality:String) 
+                 where id readonly, nationality default from db</pre>
+<p>This returns a table handle for the table <code>people</code> with fields <code>id</code>
+and <code>nationality</code>, where the <code>id</code> field cannot be modified through
+this handle, and <code>nationality</code> has a default value so 
+giving a value is optional when modifying the table.</p>
+<p>The type assigned by Links to a table handle has three fields,
+indicating the <em>readable</em> fields, the <em>writeable</em> fields and the
+<em>needed</em> fields, in that order:</p>
+<pre>
+  links&gt;
+    var t = table &quot;people&quot; with (id:Int, name:String, nationality:String) 
+                           where id readonly, nationality default from db;
+  t = (table people) : 
+    TableHandle((id:Int,name:String,nationality:String),
+                (name:String,nationality:String),
+                (name:String))</pre>
+<p>Only <code>name</code> and <code>nationality</code> are <em>writeable</em>, as <code>id</code> is
+read-only. Only <code>name</code> is <em>needed</em> when inserting, as <code>nationality</code>
+has a default and <code>id</code> is read-only.</p>
+<p>
+</p>
+<h3><a name="database_abstraction">Database abstraction</a></h3>
+<p>Links supports a powerful mode of abstraction over query fragments.</p>
+<p>A simple example occurs when you want to filter a table, but using
+some abstract predicate given by another piece of code. For example,
+you are writing an API to access some database tables, and you want
+the API caller to be able to choose how to filter the rows.</p>
+<p>A natural way to do this in Links is to represent the filter using a
+predicate function (one mapping table rows to booleans):</p>
+<pre>
+  fun selectedShops(pred) {
+    for (p &lt;-- parlors) where (pred(p)) e
+  }</pre>
+<p>In this situation, since the long-arrow generator is used, the
+programmer demands that the entire comprehension be executed as a single
+SQL query--even though the predicate on which to filter is not known
+until runtime.</p>
+<p>Still, Links guarantees at compile time that this is achievable--or
+gives a compile-time error if not. This involves analyzing the program
+to ensure that callers of <code>selectedShops</code> never pass a function that
+Links cannot translate to SQL in the context of the above query. If
+so, an error is generated, usually at the call site, explaining that
+the function passed was ``wild''--the Links term for a function that
+doesn't translate to SQL.</p>
+<p>How to determine at a glance whether your function will translate to
+SQL? In brief, the only sorts of functions that should fail to
+translate are those that use ``wild'' primitives, and recursive
+functions.</p>
+<p>To recognize wild and tame functions in the compiler's output, look at
+the function arrows. A straight arrow <code>-</code>&gt; indicates a tame function,
+which can be translated to the database. A squiggly arrow <code>~</code>&gt;
+indicates a wild function, which cannot be compiled to the database.
+You can also use these arrow forms in the source, in type annoations,
+to constrain functions to the way you think they should act (or force
+the compiler to produce an error message if not).</p>
+<p>A comprehension with a long-arrow generator (See <a href="#using_tables">Using tables</a>)
+implicitly requires the entire comprehension to be translatable to a
+single SQL query, and this effectively requires every function it
+calls to be <em>tame</em>. To assert this requirement explicitly, or to make
+it elsewhere than a comprehension, use the <code>query</code> block form (See
+<a href="#query_blocks">Query blocks</a>).</p>
+<p>Besides the issue of wildness, a query expression is not considered
+SQL-translatable if its result type is not the type of a flat
+relation--a list of records with fields of base type (<code>Int</code>,
+<code>String</code>, <code>Float</code>, and so on).</p>
+<p>
+</p>
+<h3><a name="query_blocks">Query blocks</a></h3>
+<p>To assert explicitly that an expression--which need not be a
+comprehension--translates to a query, wrap it in a query block:</p>
+<pre>
+  query {
+    e
+  }</pre>
+<p>As with long-arrow comprehensions, the expression <code>e</code> must be ``tame''
+and must have relation type: a list of records with fields of base
+type, or the compiler will give an error.</p>
+<p>Use <code>query</code> assertions to offload parts of your computation to the
+database system, taking advantage of its efficient query-planning
+facilities.</p>
+<p>
+</p>
+<h2><a name="structural_pattern_matching">Structural pattern matching</a></h2>
+<p>As well as lists and variants, pattern matching can also be performed
+on constants.</p>
+<pre>
+  switch (name) {
+    case &quot;Ezra&quot; -&gt; &quot;Cooper&quot;
+    case &quot;Jeremy&quot; -&gt; &quot;Yallop&quot;
+    case &quot;Phil&quot; -&gt; &quot;Wadler&quot;
+    case &quot;Sam&quot; -&gt; &quot;Lindley&quot;
+  }</pre>
+<p>In common with other strongly-typed functional programming languages
+such as ML and Haskell, Links supports deep pattern matching.</p>
+<pre>
+  fun firstChildId(tree) {
+    switch (tree:mu a.[|Node:(a, b, a) | Leaf|]) {
+      case Node(Node(_, id, _), _, _) -&gt; Some(id)
+      case Node(Leaf, _, Node(_, id, _)) -&gt; Some(id)
+      case _ -&gt; None
+    }
+  }</pre>
+<p>This function takes a labelled binary tree, and returns the id of the
+first child of the root, if it exists. The wildcard pattern <code>_</code>
+matches any value. The type annotation is necessary if you want to
+constrain the function to only operate on labelled binary trees.</p>
+<p>Using <code>switch</code> it is possible to dispatch according to the structure
+of a value. If the structure of a value is already known, then
+patterns can also be used in other contexts. Patterns can be used to
+bind function arguments.</p>
+<pre>
+  fun foo((x=a, y=b)) {a+b}
+  foo((x=2,y=3))</pre>
+<p>This example returns <code>5</code>. Patterns can also be used to bind
+local variables.</p>
+<pre>
+  {
+    var language = Language(&quot;Links&quot;);
+    var Language(name) = language;
+    name
+  }</pre>
+<p>This example returns <code>&quot;Links&quot;</code>.</p>
+<p>
+</p>
+<h2><a name="regular_expressions">Regular expressions</a></h2>
+<p>Rudimentary regular-expression (regex) handling is provided for
+matching string against regex patterns.</p>
+<p>A regular expression is written between slashes, as
+<code>/this.is.a.regex/</code>.</p>
+<p>The operator <code>=~</code> tests the string on its left-hand side against the
+regular expression on its right-hand side. For example:</p>
+<pre>
+    if (&quot;haystack&quot; =~ /ne+dle/)
+      print(&quot;Found needle in haystack.&quot;)
+    else
+      print(&quot;No needle found in haystack.&quot;)</pre>
+<p>Presently the regex support is somewhat limited; only the following
+constructions are supported (<code>e</code> standing for any regex):</p>
+<pre>
+    a         (an unadorned character) match exactly that character
+    [a-z0-9-] match any single character in the given range
+    .         match any single characer
+    e*        match e zero or more times
+    e+        match e one or more times
+    e?        match an empty string, or e exactly once.
+    (e)       matches whatever e matches</pre>
+<p>Any of the special characters, <code>*</code> <code>+</code> <code>?</code> <code>(</code> <code>)</code> <code>[</code> and <code>]</code>,
+can be escaped with a backslash, in which case they match precisely
+that character, instead of having a special meaning.</p>
+<p>Unlike most other regex systems, Links regexes are anchored on both
+ends. So, to match a substring, you need to add <code>.*</code> at both ends.
+For example:</p>
+<pre>
+    links&gt; &quot;Portobello&quot; =~ /bell/
+    false : Bool</pre>
+<pre>
+    links&gt; &quot;Portobello&quot; =~ /.*bell.*/
+    true : Bool</pre>
+<p>
+</p>
+<h3><a name="special_feature__regexes_and_the_database">Special feature: regexes and the database</a></h3>
+<p>Certain uses of regular expressions can be translated to an SQL
+expression involving the <code>LIKE</code> operator. For example, the expression</p>
+<pre>
+    for (uni &lt;-- universities)
+    where (uni.city =~ /.*edinburgh.*/)
+      [uni]</pre>
+<p>should translate to an SQL query that selects all those unis from the
+<code>universities</code> table having <code>edinburgh</code> as a substring of their
+<code>name</code> column. The query might look like this:</p>
+<pre>
+    select id from t where t.name like '%edinburgh%'</pre>
+<p>
+</p>
+<h3><a name="limitations">Limitations</a></h3>
+<p>Currently, a regex in Links cannot be treated as a first-class value:
+a regex can only appear <em>lexically</em> as the right-hand side of a use
+of the <code>~</code> operator. The left-hand side may be any expression of
+<code>String</code> type.</p>
+<p>There is presently no way to perform regex-based substitutions or to
+capture parts of a regex match for later use.</p>
+<p>
+</p>
+<hr />
+<h1><a name="typing">Typing</a></h1>
+<p>
+</p>
+<h2><a name="types_in_links">Types in Links</a></h2>
+<p>Links is a strongly-typed, statically-typed programming
+language.</p>
+<p>This means that every value has a type, and every operation admits
+just certain types as arguments. The compiler will check that a
+program uses every value in a way consistent with a type. This way,
+for example, you can concatenate two lists but you can't concatenate
+two integers--it wouldn't make sense, and if you try to do it, the
+compiler will report an error up front. If a program passes the
+compiler, you can be certain that it doesn't have any type errors
+(modulo any bugs in the compiler!)</p>
+<p>When you use Links through the interactive shell, it tells you the
+type of every result value. You can use this shell to get familiar
+with the types of various values. For example:</p>
+<pre>
+    links&gt; 1 + 1;
+    2 : Int</pre>
+<pre>
+    links&gt; { var name = &quot;Gallileo&quot;; &quot;Hi, &quot; ++ name };
+    &quot;Hi, Gallileo&quot; : String</pre>
+<pre>
+    links&gt; (42, &quot;The answer&quot;);
+    (42, &quot;The answer&quot;) : (Int, String)</pre>
+<pre>
+    links&gt; [2, 4, 6, 8];
+    [2, 4, 6, 8] : [Int]</pre>
+<pre>
+    links&gt; (  price = 1.95, drinkName = &quot;Latte&quot; );
+    (price=1.95,drinkName=&quot;Latte&quot;) : (drinkName:String,price:Float)</pre>
+<pre>
+    links&gt; Red(7);
+    Red(7) : [|Red:Int | a|]</pre>
+<pre>
+    links&gt; Blue(7);
+    Blue(7) : [|Blue:Int | a|]</pre>
+<pre>
+    links&gt; [(42, &quot;The answer&quot;),
+            (7, &quot;The number of wonders of the world&quot;)];
+    [(42, &quot;The answer&quot;), (7, &quot;The number of wonders of the world&quot;)] 
+      : [(Int, String)]</pre>
+<p>Note that the type of an integer is Int, and the type of a string is
+String. The <em>pair</em> <code>(42, &quot;The answer&quot;)</code> has a type that indicates
+the first part of the pair is an <code>Int</code> and the second part is a
+<code>String</code>; this type is written <code>(Int, String)</code>.</p>
+<p>A list type is written with square brackets around the type of its
+elements. Note that <em>all elements of a list must be of the same
+type</em>. This allows you to apply an operation to an arbitary element of
+the list and to know what type it is. If you need to mix different
+types within a list, you can do so by assigning variant tags to
+each.</p>
+<p>By constrast, elements of a tuple can be of the same or of different
+types, but the number of elements of a tuple is fixed.</p>
+<p>The type of a record indicates exactly which fields should be present,
+and what their types are. The type of a variant tells you what its
+label is, and what type is contained in that label. (Note that, when
+you have a function, it may yield a variant type that allows more than
+one label. Each label has a specific type for its content.)</p>
+<p>When you try to evaluate an ill-typed expression, the system will give
+you a type error:</p>
+<pre>
+    links&gt; [2, 4, 6, 8, &quot;Who do we appreciate?&quot;];
+    &lt;stdin&gt;:1: Type error: Cannot unify abstract type 'List' with type 'Int'
+    In expression: [2, 4, 6, 8, &quot;Who do we appreciate?&quot;].</pre>
+<p>
+</p>
+<h2><a name="base_types">Base types</a></h2>
+<p>The base types offered by Links are</p>
+<pre>
+  Bool  Int  Char  Float  Xml  Database</pre>
+<p>The type <code>String</code> is not really a base type, but rather an alias for
+<code>[Char]</code> (the type for lists of characters). This means that any
+general list operation will work on a <code>String</code>.</p>
+<p>
+</p>
+<h2><a name="type_annotations">Type annotations</a></h2>
+<p>Links can infer type information for any program you give it. This
+means that you typically don't have to declare any types. But if you
+get a type error, it may not point to the part of the code where you
+really made the mistake.</p>
+<p>To help the interpreter understand what you intend, and to help it pin
+down the error to the right place, you can give an optional type
+annotation on any expression. This is done using the colon as the type
+ascription operator, as follows:</p>
+<pre>
+    2 + 2 : Int            # OK
+    &quot;two plus two&quot; : Int   # ERROR</pre>
+<p>When dealing with constants, as above, the type is always
+obvious. Type annotation is more useful when dealing with functions,
+whose type may be inferred in a way that's not obvious. Suppose for
+example that you have a function h that you know should always return
+a list of Ints. You can tell the compiler this, and it will check that
+it is the case:</p>
+<pre>
+  fun h(x, y) {
+    f(x) ++ g(y) : [Int]
+  }</pre>
+<p>This can be useful because f and g may in fact return
+types that are compatible (such as <code>[String]</code>), but are not what you
+expect. Since they are compatible, the function <code>h</code> will be
+type-correct; but elsewhere in the program, you may get a confusing
+type error involving <code>h</code>. Providing an annotation for <code>h</code>, like
+this, will force the compiler to tell you if <code>h</code> does not have the
+type you expect.</p>
+<p>
+</p>
+<h2><a name="type_aliases">Type aliases</a></h2>
+<p>Sometimes it is convenient to define an alias for a type in order to
+avoid having to write out the whole type every time it is used. For
+instance, suppose you want a type for representing colours:</p>
+<pre>
+  [|Red | Orange | Yellow | Green | Blue | Indigo | Violet|]</pre>
+<p>Then you can write:</p>
+<pre>
+  typename Colour = [|Red | Orange | Yellow | Green | Blue | Indigo | Violet|];</pre>
+<p>and following this declaration you can use <code>Colour</code> in place of
+<code>[|Red | Orange | Yellow | Green | Blue | Indigo | Violet|]</code>. For
+instance, you can now define functions with the following signatures:</p>
+<pre>
+  sig showColour : (Colour) -&gt; String
+  sig invertColour : (Colour) -&gt; Colour
+  sig combineColours : (Colour, Colour) -&gt; Colour</pre>
+<p>It is also possible to define parameterised type aliases.</p>
+<pre>
+  links&gt; typename Pair(a, b) = (a, b)
+  links&gt; (1, true) : Pair (?, ?)
+  (1, true) : Pair (Int, Bool)</pre>
+<p>It is even possible to parameterise type aliases over row variables.</p>
+<pre>
+  links&gt; typename Record(r::Row) = (x:Int|r);
+  Record = a.(x:Int|a)</pre>
+<p>Currently type aliases are only allowed at the top-level.</p>
+<p>
+</p>
+<h2><a name="type_variables">Type variables</a></h2>
+<p>Type variables in Links are written as lower case names.</p>
+<pre>
+  sig id : (a) -&gt; a
+  fun id(x) {x}</pre>
+<p>We distinguish between <em>rigid</em> type variables and <em>flexible</em> type
+variables. A <em>rigid</em> type variable (like the <a href="#item_a"><code>a</code></a> in the <code>id</code>
+function above) is a proper polymorphic object-level type variable
+that can be instantiated to any type when its binding function is
+applied. A <em>flexible</em> type variable (also called a <em>weak</em> type
+variable or <em>unification</em> type variable) is a monomorphic meta-level
+variable that will be instantiated to a object-level type by the type
+inference algorithm. A flexible type variable is indicated by
+prefixing a type variable with a question mark <code>?</code>. Flexible type
+variables are useful if you want to assert the shape of the type of an
+expression, but you want type inference to fill in some of the type
+for you.</p>
+<pre>
+  links&gt; (1, (2, ((3, fun (x) {x}), &quot;a&quot;)), true) : (Int, ?a, Bool);
+  (1, (2, ((3, fun), &quot;a&quot;)), true) : (Int, (Int, ((Int, (a) -&gt; a), String)), Bool)</pre>
+<p>If you only want to use a flexible type variable once, then you don't
+need to name it.</p>
+<pre>
+  links&gt; (1, (2, ((3, fun (x) {x}), &quot;a&quot;)), true) : (Int, ?, Bool);
+  (1, (2, ((3, fun), &quot;a&quot;)), true) : (Int, (Int, ((Int, (a) -&gt; a), String)), Bool</pre>
+<p>A rigid type variable that is only used once is written as <code>_</code>. This
+notation is also used by the pretty-printer.</p>
+<pre>
+  links&gt; fun (x) {0};
+  fun : (_) -&gt; Int</pre>
+<p>
+</p>
+<h2><a name="function_types_and_effects">Function types and effects</a></h2>
+<p>Function typess in Links are annotated with effects. The primitive
+form of a function type is:</p>
+<pre>
+  (A1, ..., An) {E}-&gt; B</pre>
+<p>This is the type of a function that takes n arguments of types <code>A1</code>,
+..., <code>An</code>, has effects <code>E</code> and returns values of type <code>B</code>.</p>
+<p>The effects <code>E</code> are represented as a <em>row</em> type (as used in record
+and variant types). If an effect is present then that indicates that
+it might happen at run-time. If an effects absent then that indicates
+that it will definitely not happen at run-time.</p>
+<p>Currently the only two effects that are tracked in Links are <code>wild</code>,
+which corresponds to code that cannot be run in the database, and
+<code>hear:A</code> which corresponds to code that can 'hear' messages of type
+<code>A</code>. In the future we plan to experiment with tracking other effects.</p>
+<p>In an effort to make function types more readable, syntactic sugar is
+provided for a number of common classes of function arrow. As well as
+being available to the programmer, the syntactic sugar is also used by
+the pretty-printer. The meta-variable <code>X</code> stands for a rigid (<code> a</code> or
+<code>_</code>) or flexible (<code>?a</code> or <code>?</code>) row variable.</p>
+<pre>
+  -X-&gt;           {|X}-&gt;
+  -&gt;             {|_}-&gt;
+  {E}~&gt;          {wild,E}~&gt;
+  ~X~&gt;           {|X}~&gt;
+  ~&gt;             {|_}~&gt;</pre>
+<pre>
+  {:A}~&gt;         {hear:A}~&gt;
+  {:A,E}~&gt;       {hear:A,E}~&gt;
+  {:A|X}~&gt;       {hear:A|X}~&gt;</pre>
+<p>
+</p>
+<h2><a name="kinds_and_subkinding">Kinds and subkinding</a></h2>
+<p>The Links type system has three <em>kinds</em> for classifying types and
+type variables: standard types and type variables have kind <code>Type</code>,
+rows and row variables have kind <code>Row</code>, and presence flags and
+presence variables have kind <code>Presence</code>.</p>
+<p>In order to allow the type system to enforce the constraint that
+queries can only return lists of records of base type, Links also
+supports a very basic form of <em>subkinding</em>. Type variables and row
+variables can be annotated with a subkind. Type variables either have
+subkind <code>Any</code>, which means they can be instantiated to any type, or
+subkind <code>Base</code> which means they can only be instantiated to base
+types. The subkind <code>Base</code> is a subkind of <code>Any</code>. Similarly, row
+variables either have subkind <code>Any</code> or subkind <code>Base</code>. A row
+variable of subkind <code>Base</code> can only be instantiated with a row if all
+the field in the row are base types. Type inference introduces subkind
+annotations when inferring the type of a query.</p>
+<pre>
+  links&gt; fun (e) {query {e}};
+  fun : ([(|a::Base)]) -&gt; [(|a::Base)]</pre>
+<p>The base types are: <code>Int</code>, <a href="#item_bool"><code>Bool</code></a>, <code>Float</code>, <code>Char</code> and <code>String</code>.</p>
+<p>(In fact <code>String</code> is an alias for <code>[Char]</code>. This leads to a hole in
+our SQL compilation scheme, as it fails to disallow string
+manipulation code that cannot be compiled to SQL, such as the
+following:</p>
+<pre>
+  fun (t) {for (r &lt;-- t) [(name=(for (c &lt;- r.name) where (c &lt;&gt; 'a') [c]):String)]}</pre>
+<p>This problem will be fixed in a future version of Links by changing
+<code>String</code> to be a distinct base type.)</p>
+<p>
+</p>
+<hr />
+<h1><a name="features">Features</a></h1>
+<p>
+</p>
+<h2><a name="formlets">Formlets</a></h2>
+<p>Links allows the <em>abstraction</em> of small fragments of an HTML form,
+called <em>formlets</em>, so that the submitted data can be packaged into
+more meaningful components, and the submitted data can be abstracted
+from its HTML-level representation.</p>
+<p>As an example, you may wish to create a <em>formlet</em> to abstract the
+notion of a ``date entry field.'' Concretely, in HTML, this might take a
+variety of forms; it might use just one input field, or a field for
+each component (day, month, and year), or it might present a graphical
+control for the user to select a date.</p>
+<p>The <em>client code</em> of the formlet wants to receive the date value in
+one lump, not as individual fields; furthermore the format of the data
+received by the client need not be the same as the format sent by the
+browser. As a result, the designer of the date formlet may change the
+HTML representation without changing the date representation that is
+returned to the client code. We say that the formlet is <em>abstracted</em>
+from the HTML representation of a form.</p>
+<p>This abstraction is achieved in Links using a syntactic construct
+known as <code>formlet</code>/<code>yields</code>. An example date formlet might look like
+this:</p>
+<pre>
+  fun dateFormlet(msg) {
+    formlet &lt;#&gt;
+      {stringToXml(msg)} &lt;br /&gt;
+      Day:   {inputInt -&gt; day}
+      Month: {inputInt -&gt; month}
+      Year:  {inputInt -&gt; year}
+    &lt;/#&gt;
+    yields {
+      Date(day, month, year)
+    }
+  }</pre>
+<p>This function takes a string <code>msg</code> from the caller (a bit of text to
+include before the input fields) and constructs an XML value including
+three input fields with the <code>msg</code> above them. The inputs are
+introduced using the <em>formlet binding</em> construct, which looks like this:</p>
+<pre>
+   { body -&gt; x }</pre>
+<p>The expresion <code>body</code> (in the above example, <code>inputInt</code>) is itself a
+formlet; it has a concrete realization (<code>inputInt</code> is realized
+simply as an HTML <code>&lt;input&gt;</code> field) but will later (when the
+web user submits the form) produce a value, which will be bound to
+<code>x</code>. <code>x</code> is in scope throughout the <code>yields</code> expression.</p>
+<p>The <code>yields</code> expression is where the data is packaged for the
+client. It is evaluated only when the form is submitted. The value
+emitted by the yields expression can further be bound by yet another
+formlet binding.</p>
+<p>Thus, to continue the example, another piece of code can make use of
+the dateFormlet as follows:</p>
+<pre>
+  formlet
+    &lt;table&gt;
+    &lt;tr&gt;&lt;td&gt;
+      {dateFormlet(&quot;Arrival&quot;) -&gt; arrival}
+    &lt;/td&gt;&lt;td&gt;
+      {dateFormlet(&quot;Departure&quot;) -&gt; departure}
+    &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  yields
+    Itinerary(arrival, departure)</pre>
+<p>Here the values bound to <code>arrival</code> and <code>departure</code> are the values
+emitted by the respective <code>yields</code> bodies of the formlets returned by
+calls to <code>dateFormlet</code>; in this case they will be <code>Date</code>-tagged
+values such as <code>Date(28, 2, 2007)</code>.</p>
+<p>The type of a <code>formlet</code>/<code>yields</code> expression is <a href="#item_formlet"><code>Formlet(</code></a><em>a</em><code>)</code>,
+where <em>a</em> is the type returned by the <code>yields</code> body. The function
+<code>dateFormlet</code> thus has type <a href="#item_formlet"><code>String -&gt; Formlet([|Date:(Int, Int,
+Int)|])</code></a>.</p>
+<p>A <a href="#item_formlet"><code>Formlet(</code></a><em>a</em><code>)</code> value cannot be embedded in HTML until it has been
+``rendered''. To render such a value, use the render function:</p>
+<pre>
+    render(formlet &lt;#&gt; {input -&gt; x} &lt;/#&gt; yields { x }, handler)</pre>
+<p><code>render</code> has type <a href="#item_formlet"><code>(Formlet (a), (a -&gt; XML)) -&gt; XML</code></a>.</p>
+<p>Having <code>render</code>ed a formlet as a form, the resulting XML can be
+returned to the top-level, and thence served to the browser. When the
+user submits the form, all the submitted data will be processed by all
+the intermediate <code>yields</code> bodies, and finally the function <code>handler</code>
+will be called.</p>
+<p>
+</p>
+<h2><a name="concurrency">Concurrency</a></h2>
+<p>A Links program begins as a single thread of control but can fork into
+many processes by executing the <code>spawn</code> primitive:</p>
+<pre>
+  var newProcID = spawn { expression };</pre>
+<p>This starts a new process which begins by evaluating
+<code>expression</code>. The value of the expression is discarded if evaluation
+ever completes.  <code>spawn</code> returns an identifier of the new process to
+the calling process. This identifier can be used to address messages
+to the new process, with the <code>!</code> primitive (pronounced ``send''):</p>
+<pre>
+   procId ! msg</pre>
+<p>This appends the value <code>msg</code> to the mailbox for the process
+identified by <code>procID</code>. The return value is just <code>()</code>. The mailbox
+is FIFO, so if you know that some message is sent before some other
+message, you know they will be received in that order.</p>
+<p>Each process's mailbox is given a static type according to the
+messages it expects to receive. Typically, a process will use variants
+to tag the various messages it can receive; for example, a process
+that can expects to be informed of passing comets and celebrity
+sightings might expect to receive either a value
+<code>CelebritySighting(celebName, atVenue)</code> or a value
+<code>PassingComet(cometID, zenith, azimuth)</code>. This process's mailbox
+would be given the type 
+<code>[|CelebritySighting:(String, String) | PassingComet:(Int, Float, Float)|]</code></p>
+<p>A process can receive messages using the <code>recv</code> function, which
+returns the next message in the current process's mailbox.</p>
+<pre>
+  var nextMsg = recv()</pre>
+<p>More commonly, however, you will want to dispatch on the received
+message's variant tag immediately. The <code>receive</code> construct makes this
+easy to do.</p>
+<pre>
+  receive {
+    case CelebritySighting(celebName, atVenue) -&gt; e1
+    case PassingComet(cometID, zenith, azimuth) -&gt; e2
+  }</pre>
+<p>This removes the next message from the mailbox and does a <code>switch</code> on
+it. (See <a href="#polymorphic_variants">Polymorphic variants</a>).</p>
+<p>
+</p>
+<h2><a name="located_code_and_remote_procedure_calls">Located code and remote procedure calls</a></h2>
+<p>A client-side Links program can make seamless remote procedure calls
+to the server, and the server can in turn make remote procedure calls
+to the client. The server stores no state while the computation is
+proceeding at the client.</p>
+<p>To use this feature, simply annotate functions with the keyword
+``client'' or ``server''. For example:</p>
+<pre>
+  fun lookupUserID(username) server {
+    for (user &lt;- users)
+    where (user.name = username)
+      [user.id]
+  }</pre>
+<pre>
+  fun setPageBackground(color) client {
+    doc = domGetDocumentRef();
+    domSetAttributeRef(doc, &quot;style&quot;, &quot;background-color: &quot; ++ color);
+  }</pre>
+<p>A function annotated with ``server'' will always run on the server, even
+if it is called from code running on the client. Likewise for ``client''
+functions.</p>
+<p>A server call is implemented as a distinguished HTTP request. A client
+call is implemented as a special HTTP response body which the
+client-side code recognizes as a remote call.</p>
+<p>Programs that neither contain client-annotated definitions nor make
+use of client primitives (such as the DOM functions described below)
+are processed differently by Links.  In such cases plain HTML, not
+JavaScript, is sent to the browser, and all interaction takes place
+via standard HTML form submission.</p>
+<p>
+</p>
+<h2><a name="handling_user_actions">Handling User Actions</a></h2>
+<p>A Links program usually runs on a client (browser) and a server. The
+client code can be notified when certain user events take place, such
+as pressing a key on the keyboard or clicking on a hyperlink. The code
+that responds to such events is associated with particular nodes in
+the DOM tree and is expressed through special XML attributes, called
+l-event attributes, attached to the relevant XHTML tags. This section
+defines the attributes and their use.</p>
+<p>An l-event attribute begins with the prefix <code>l:</code> and corresponds to
+an event type as defined by the browser. The event type is determined
+by the attribute name simply by stripping off the <code>l:</code>
+prefix. Widely-supported l-event attributes include:</p>
+<ul>
+<li><strong><a name="item_l_3aonmousedown"><code>l:onmousedown</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonmouseup"><code>l:onmouseup</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonmousemove"><code>l:onmousemove</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonmouseout"><code>l:onmouseout</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonmouseenter"><code>l:onmouseenter</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonkeyup"><code>l:onkeyup</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonkeydown"><code>l:onkeydown</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonclick"><code>l:onclick</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonfocus"><code>l:onfocus</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonchange"><code>l:onchange</code></a></strong>
+
+</li>
+<li><strong><a name="item_l_3aonload"><code>l:onload</code></a></strong>
+
+</li>
+</ul>
+<p>When an element containing one of these attributes is installed in the
+current DOM document (see <a href="#modifying_the_web_page">Modifying the Web Page</a>), the associated
+code is registered as a handler for the corresponding event type. If
+the element is removed from the DOM, its event handlers become
+inactive.</p>
+<p>The content of one of these attributes should be a Links expression
+enclosed in curly braces, an expression of type <code>()</code> which may
+perform side-effects in response to the event. For example:</p>
+<pre>
+    &lt;input type=&quot;button&quot; value=&quot;Add Photo&quot;
+           l:onclick=&quot;{domAppendChild(container,
+                                         &lt;img src=&quot;icon.jpeg&quot;/&gt;)}&quot; /&gt;</pre>
+<p>
+</p>
+<h3><a name="interpreting_the_event">Interpreting the Event</a></h3>
+<p>In an l-event handler, there is a special variable in scope called
+<code>event</code>.  This variable contains an object of type <code>Event</code> which can
+be accessed using the following API. This API corresponds to the
+Yahoo! Web UI library (<a href="http://developer.yahoo.com/yui/">http://developer.yahoo.com/yui/</a>). These
+methods are implemented in a browser-independent way. These functions
+constitute the sole interface to the <code>Event</code> object: the object is
+not a record and has no directly-accessible fields.</p>
+<dl>
+<dt><strong><a name="item_gettarget"><code>getTarget</code></a></strong></dt>
+
+<dd>
+<p>An event generally has a <em>target</em>, a DomNode at which the event has 
+occurred (for example, a mouse-down event will have as its target the leaf 
+node upon which the mouse was clicked). This method returns the target.</p>
+</dd>
+<dt><strong><a name="item_gettargetelement"><code>getTargetElement</code></a></strong></dt>
+
+<dd>
+<p>This function behaves like <a href="#item_gettarget"><code>getTarget</code></a>, except that if the node is
+a text node (rather than an element node), it returns the node's
+parent (which must be an element node).</p>
+</dd>
+<dt><strong><a name="item_getfromelement"><code>getFromElement</code></a></strong></dt>
+
+<dt><strong><a name="item_gettoelement"><code>getToElement</code></a></strong></dt>
+
+<dd>
+<p>Mouse-out and mouse-over events have two targets. The function
+<a href="#item_getfromelement"><code>getFromElement</code></a> returns the element the mouse came from.
+<a href="#item_gettoelement"><code>getToElement</code></a> returns the element from which the mouse came.</p>
+</dd>
+<dt><strong><a name="item_getpagex"><code>getPageX</code></a></strong></dt>
+
+<dt><strong><a name="item_getpagey"><code>getPageY</code></a></strong></dt>
+
+<dd>
+<p>Some events refer to a particular point on the page. These methods return 
+the x and y coordinates of that point, relative to the top-left corner of the 
+page (<em>right</em> and <em>down</em> are the positive directions).</p>
+</dd>
+<dt><strong><a name="item_gettime"><code>getTime</code></a></strong></dt>
+
+</dl>
+<p>
+</p>
+<h2><a name="modifying_the_web_page">Modifying the Web Page</a></h2>
+<p><a href="#xml_quasiquotes">XML Quasiquote</a> expressions construct XML values, but these 
+values are not rendered by a browser immediately. XML values can be used to 
+create DOM nodes, which in turn can be installed in the <em>active document</em>.</p>
+<p>There are two ways to install nodes in the active document:</p>
+<ol>
+<li><strong><a name="item_the">An XML value returned by the final expression of a Links program is
+converted to a DOM node and installed as the (initial) active
+document. This is true in client context as well as server context.</a></strong>
+
+</li>
+<li><strong><a name="item_primitives">A set of primitives (beginning with <code>dom</code>-) are provided for making
+modifications to particular parts of the document. These operations
+only work in client context.</a></strong>
+
+</li>
+</ol>
+<p>Elements that are not installed are not visible, nor do events occur
+on them, so their event handlers cannot fire. (See <a href="#handling_user_actions">Handling User Actions</a>.)</p>
+<p>Links makes a distinction between XML trees, which are immutable,
+and DOM nodes, which are mutable objects. DOM nodes are owned by a DOM
+manager module, and all interaction with DOM nodes is through calls to
+that module, using objects call <code>DomNode</code>s. You can create DOM
+nodes by passing an XML tree: the XML constitutes a model for the DOM
+node, which is a rough copy of the XML. Likewise, from a DomNode,
+you can extract an XML image of the DOM node and its DOM subtree. The
+browser may have special semantics associated with DOM nodes, and may
+add or remove attributes and children without warning; XML values,
+however, are completely within the control of the Links program.</p>
+<p>
+</p>
+<h3><a name="dom_operations">DOM operations</a></h3>
+<p>The operations for DOM interaction are as follows.</p>
+<p>Operations ending with <code>Ref</code>
+work on DOM nodes; operations ending with <code>Xml</code> take an XML value and convert
+it to a DOM node before working with it.</p>
+<dl>
+<dt><strong><a name="item_insertbefore"><code>insertBefore(xml, beforeNode)</code></a></strong></dt>
+
+<dd>
+<p>Creates a sequence of nodes using <code>xml</code> as the image, and adds them
+as the previous sibling of the node <code>beforeNode</code>.</p>
+</dd>
+<dt><strong><a name="item_appendchildren"><code>appendChildren(xml, parentNode)</code></a></strong></dt>
+
+<dd>
+<p>Creates a sequence of nodes using <code>xml</code> as the image, and adds them as
+the after the last child of the node <code>parentNode</code>.</p>
+</dd>
+<dt><strong><a name="item_replacenode"><code>replaceNode(xml, node)</code></a></strong></dt>
+
+<dd>
+<p>Replaces <code>node</code> with xml.</p>
+</dd>
+<dt><strong><a name="item_replacedocument"><code>replaceDocument(xmlVal)</code></a></strong></dt>
+
+<dd>
+<p>Replaces the entire document with xmlVal.</p>
+</dd>
+<dt><strong><a name="item_dominsertbeforeref"><code>domInsertBeforeRef(moveRef, beforeRef)</code></a></strong></dt>
+
+<dd>
+<p>Moves the node <code>moveRef</code> to become the previous sibling of the node
+<code>beforeRef</code>.</p>
+</dd>
+<dt><strong><a name="item_domappendchildref"><code>domAppendChildRef(newChildRef, parentRef)</code></a></strong></dt>
+
+<dd>
+<p>Moves the node <code>newChildRef</code> to become the last child of the node
+<code>parentRef</code>.</p>
+</dd>
+<dt><strong><a name="item_removenode"><code>removeNode(node)</code></a></strong></dt>
+
+<dd>
+<p>Removes <code>node</code> from its current position, leaving it with no
+parent. This makes it an orphan.</p>
+</dd>
+<dt><strong><a name="item_replacechildren"><code>replaceChildren(xml, node)</code></a></strong></dt>
+
+<dd>
+<p>Replaces the children of <code>node</code> with xml.</p>
+</dd>
+<dt><strong><a name="item_swapnodes"><code>swapNodes(node1, node2)</code></a></strong></dt>
+
+<dd>
+<p>Swap node1 with node2.</p>
+</dd>
+<dt><strong><a name="item_getdocumentnode"><code>getDocumentNode()</code></a></strong></dt>
+
+<dd>
+<p>Return a reference to the <em>document element</em>, that is, the top-level
+of the installed document.</p>
+</dd>
+<dt><strong><a name="item_getnodebyid"><code>getNodeById(id)</code></a></strong></dt>
+
+<dd>
+<p>Given a string ID value, finds the DOM node with that ID and returns
+it. If more than one node has that ID, the behavior is undefined.</p>
+</dd>
+<dt><strong><a name="item_getvalue"><code>getValue(node)</code></a></strong></dt>
+
+<dd>
+<p>Translates the given DOM node into an XML value and returns that.</p>
+</dd>
+<dt><strong><a name="item_isnull"><code>isNull(node)</code></a></strong></dt>
+
+<dd>
+<p>Returns true if <code>node</code> is null.</p>
+</dd>
+<dt><strong><a name="item_iselementnode"><code>isElementNode(node)</code></a></strong></dt>
+
+<dd>
+<p>Returns true if <code>node</code> is not null and is an element node.</p>
+</dd>
+</dl>
+<p>Note: when manipulating the DOM, care should be taken to ensure that a given 
+ID value appears only once amongst the installed DOM nodes. Some operations 
+may behave unreliably when IDs are duplicated. Orphaned DOM nodes may reuse 
+ID values.</p>
+<p>You can also access attributes of DOM nodes, and navigate the DOM
+tree, in a read-only fashion using the following operations:</p>
+<dl>
+<dt><strong><a name="item_domgettagnamefromref"><code>domGetTagNameFromRef(ref)</code></a></strong></dt>
+
+<dd>
+<p>Returns the tag name of <code>ref</code> as a string. For example, a <code>div</code> node would 
+return the string <code>&quot;div&quot;</code>.</p>
+</dd>
+<dt><strong><a name="item_domgetattributefromref"><code>domGetAttributeFromRef(ref, attrName)</code></a></strong></dt>
+
+<dd>
+<p>Returns the value of the attribute <code>attrName</code> on the node <code>ref</code>. For
+example, on a node pointed to by <code>ref</code> with the XML representation</p>
+<pre>
+  &lt;a href=&quot;more_info.html&quot;&gt;More info&lt;/a&gt;,</pre>
+<p>the call <a href="#item_domgetattributefromref"><code>domGetAttributeFromRef(ref, &quot;href&quot;)</code></a> would return the string 
+<code>&quot;more_info.html&quot;</code>.</p>
+</dd>
+<dt><strong><a name="item_domgetparentfromref"><code>domGetParentFromRef(ref)</code></a></strong></dt>
+
+<dd>
+<p>If the node pointed to by <code>ref</code> has a parent, this call returns a reference to 
+that parent node.</p>
+</dd>
+<dt><strong><a name="item_domgetfirstchildfromref"><code>domGetFirstChildFromRef(ref)</code></a></strong></dt>
+
+<dd>
+<p>If the node pointed to by <code>ref</code> has children, this call returns a reference to 
+the first child (in document order).</p>
+</dd>
+<dt><strong><a name="item_domgetnextsibingfromref"><code>domGetNextSibingFromRef(ref)</code></a></strong></dt>
+
+<dd>
+<p>If the node pointed to by <code>ref</code> has siblings occurring after it, this
+call returns a reference to the next sibling.</p>
+</dd>
+<dt><strong><a name="item_domgetchildrenfromref"><code>domGetChildrenFromRef(ref)</code></a></strong></dt>
+
+<dd>
+<p>Returns a list of references to the child nodes of the node ref. NOT
+YET IMPLEMENTED</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="xml_operations">XML operations</a></h2>
+<p>For inspecting pure XML values, the following functions are provided:</p>
+<dl>
+<dt><strong><a name="item_gettagname"><code>getTagName(xml)</code></a></strong></dt>
+
+<dd>
+<p>Returns the tag name of the given XML node, as a string. For example:</p>
+<pre>
+    getTagName(&lt;h1&gt;Dog Bites Man&lt;/h1&gt;)</pre>
+<p>returns the string <code>&quot;h1&quot;</code>. It is an error to apply this to an XML
+text node.</p>
+</dd>
+<dt><strong><a name="item_gettextcontent"><code>getTextContent(xml)</code></a></strong></dt>
+
+<dd>
+<p>Given an XML text node <code>xml</code>, returns the text as a string. It is an
+error to apply this to an element node.</p>
+</dd>
+<dt><strong><a name="item_getattributes"><code>getAttributes(xml)</code></a></strong></dt>
+
+<dd>
+<p>Fetches a list the list of attributes associated with the given XML
+value.</p>
+<pre>
+    getAttributes(&lt;div class=&quot;sidebar&quot; /&gt;)</pre>
+<p>returns <code>[(&quot;class&quot;, &quot;sidebar&quot;)]</code>. It is an error to apply this to an XML
+text node.</p>
+</dd>
+<dt><strong><a name="item_hasattribute"><code>hasAttribute(xml,attrName)</code></a></strong></dt>
+
+<dd>
+<p>Returns true if the given XML value has the named attribute and false
+otherwise. For example</p>
+<pre>
+    hasAttribute(&lt;div class=&quot;sidebar&quot; /&gt;, &quot;class&quot;)</pre>
+<p>returns <code>true</code>. It is an error to apply this to an XML
+text node.</p>
+</dd>
+<dt><strong><a name="item_getattribute"><code>getAttribute(xml,attrName)</code></a></strong></dt>
+
+<dd>
+<p>Fetches the named attribute of the given XML value, as a string. For
+example</p>
+<pre>
+    getAttribute(&lt;div class=&quot;sidebar&quot; /&gt;, &quot;class&quot;)</pre>
+<p>returns <code>&quot;sidebar&quot;</code>. It is an error to apply this to an XML
+text node.</p>
+</dd>
+<dt><strong><a name="item_getchildnodes"><code>getChildNodes(xml)</code></a></strong></dt>
+
+<dd>
+<p>Returns a list of the child nodes of this xml node.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="cookies">Cookies</a></h2>
+<p>When in the context of an HTTP request, cookies can be manipulated
+using these library functions:</p>
+<pre>
+    getCookie : (String) ~&gt; String
+    setCookie : (String, String) ~&gt; unit</pre>
+<p>Each takes the cookie name as its first parameter. <code>getCookie</code>
+returns the current value of the cookie, as it was passed with the
+HTTP request. <code>setCookie</code> takes,
+as its second parameter, the new value for that cookie. There is
+currently no way to control the path/domain restrictions of the cookie
+or the expiration date. All cookies set by these utilities are session
+cookies and expire when the browser is closed. More flexible support
+for cookies is planned for future work.</p>
+<p>
+</p>
+<hr />
+<h1><a name="library_functions">Library functions</a></h1>
+<p>Links has various built-in library functions. A full list of these,
+along with their types, can be obtained by typing <code>@builtins;</code> in the
+interactive shell.</p>
+<p>
+</p>
+<h2><a name="explicit_type_conversions">Explicit type conversions</a></h2>
+<pre>
+ stringToInt      : (String) -&gt; Int
+ intToFloat       : (Int) -&gt; Float
+ intToString      : (Int) -&gt; String
+ floatToString    : (Float) -&gt; String
+ stringToXml      : (String) ~&gt; Xml
+ intToXml         : (Int) ~&gt; Xml
+ floatToXml       : (Int) ~&gt; Xml</pre>
+<p>These function convert between values of different types.</p>
+<pre>
+ ord              : (Char) -&gt; Int
+ chr              : (Int) -&gt; Char</pre>
+<p>The <code>ord</code> and <code>chr</code> functions converts between a character and its
+ASCII value as an integer.</p>
+<p>
+</p>
+<h2><a name="negation">Negation</a></h2>
+<pre>
+ not              : (Bool) -&gt; Bool
+ negate           : (Int) -&gt; Int
+ negatef          : (Float) -&gt; Float</pre>
+<p>
+</p>
+<h2><a name="character_classification">Character classification</a></h2>
+<pre>
+ isAlpha          : (Char) ~&gt; Bool
+ isAlnum          : (Char) ~&gt; Bool
+ isLower          : (Char) ~&gt; Bool
+ isUpper          : (Char) ~&gt; Bool
+ isDigit          : (Char) ~&gt; Bool
+ isXDigit         : (Char) ~&gt; Bool
+ isBlank          : (Char) ~&gt; Bool</pre>
+<p>(<code>isXDigit</code> returns true for hexadecimal digits)</p>
+<p>
+</p>
+<h2><a name="case_conversion">Case conversion</a></h2>
+<pre>
+ toUpper          : (Char) -&gt; Char
+ toLower          : (Char) -&gt; Char</pre>
+<p>
+</p>
+<h2><a name="floating_point_functions">Floating point functions</a></h2>
+<pre>
+ floor            : (Float) -&gt; Float
+ ceiling          : (Float) -&gt; Float
+ cos              : (Float) -&gt; Float
+ sin              : (Float) -&gt; Float
+ tan              : (Float) -&gt; Float
+ log              : (Float) -&gt; Float
+ sqrt             : (Float) -&gt; Float</pre>
+<p>
+</p>
+<h2><a name="miscellaneous">Miscellaneous</a></h2>
+<pre>
+ print            : (String) ~&gt; ()</pre>
+<p>Print a string to the standard output. (This function has undefined behaviour when Links is running as a CGI script.)</p>
+<pre>
+ error            : (String) ~&gt; a
+ 
+Raise a fatal error.</pre>
+<pre>
+ debug            : (String) ~&gt; ()</pre>
+<p>Output a string to stderr. When running a client function this will
+output to a special window only if links is run with the -d flag. When
+running a server function stderr is typically forwarded to the web
+server's error log.</p>
+<pre>
+ sleep            : (Int) ~&gt; ()</pre>
+<p>Wait for the specified number of seconds.</p>
+<pre>
+ exit             : (a) ~&gt; b</pre>
+<p>Exits the program, using the argument to exit as the program's return value.</p>
+<p>(FIXME: this can be ill-typed.)</p>
+<p>
+</p>
+<hr />
+<h1><a name="standard_library__prelude_">Standard library (prelude)</a></h1>
+<p>A set of standard Links functions is defined in the file
+<code>prelude.links</code>. This file is loaded automatically whenever Links
+runs a program. The functions it defines are explained below.</p>
+<p>
+</p>
+<h2><a name="list_utilities">List utilities</a></h2>
+<ul>
+<li><strong><a name="item_length__3a__28_5b__5d_29__7e_3e_int">length : ([_]) ~&gt; Int</a></strong>
+
+<p>Returns the number of elements in the given list.</p>
+</li>
+<li><strong><a name="item_all__3a__28a_b_7e_3e_bool_2c__5ba_5d_29_b_7e_3e_bo">all : (a b~&gt; Bool, [a]) b~&gt; Bool</a></strong>
+
+<p>Returns <code>true</code> if all elements of the list satisfy the predicate,
+<code>false</code> otherwise. (All elements of the empty list satisfy any
+predicate).</p>
+</li>
+<li><strong><a name="item_and__3a__28_5bbool_5d_29__7e_3e_bool">and : ([Bool]) ~&gt; Bool</a></strong>
+
+<p>Returns <code>true</code> if all elements of the list are <code>true</code>.</p>
+</li>
+<li><strong><a name="item_any__3a__28_28a_29_b_7e_3e_bool_2c__5ba_5d_29_b_7e">any : ((a) b~&gt; Bool, [a]) b~&gt; Bool</a></strong>
+
+<p>Returns <code>true</code> if any element of the list satisfies the predicate,
+<code>false</code> otherwise. (No element of the empty list satisfies any
+predicate).</p>
+</li>
+<li><strong><a name="item_or__3a__28_5bbool_5d_29__7e_3e_bool">or : ([Bool]) ~&gt; Bool</a></strong>
+
+<p>Returns <code>true</code> if any element of the list is <code>true</code>.</p>
+</li>
+<li><strong><a name="item_bool">odd : (Int) -&gt; Bool
+even : (Int) -&gt; Bool</a></strong>
+
+<p>Returns <code>true</code> if the argument is, respectively, odd or even.</p>
+</li>
+<li><strong><a name="item_select__3a__28_5ba_5d_2c_int_29__7e_3e_a">select : ([a], Int) ~&gt; a</a></strong>
+
+<p><code>select(list, i)</code> returns the <code>i</code>th element of the list, the first
+element being 0 (and throws an error if the list has fewer than <code>i</code>+1
+elements).</p>
+</li>
+<li><strong><a name="item_swap__3a__28_5ba_5d_2c_a_2c_a_29__2d_3e__5ba_5d">swap : ([a], a, a) -&gt; [a]</a></strong>
+
+<p><code>swap(xs, a, b)</code> takes each instance of <a href="#item_a"><code>a</code></a> in <code>xs</code> and replaces it
+with <code>b</code>, and vice-versa, performing the two substitutions simultaneously.</p>
+</li>
+<li><strong><a name="item_fold_left__3a__28_28a_2c_b_29_c_7e_3e_a_2c_a_2c__5">fold_left : ((a, b) c~&gt; a, a, [b]) c~&gt; a</a></strong>
+
+</li>
+<li><strong><a name="item_fold_right__3a__28_28a_2c_b_29_c_7e_3e_b_2c_b_2c__">fold_right : ((a, b) c~&gt; b, b, [a]) c~&gt; b</a></strong>
+
+</li>
+<li><strong><a name="item_fold_left1__3a__28_28a_2c_a_29_b_7e_3e_a_2c__5ba_5">fold_left1 : ((a, a) b~&gt; a, [a]) b~&gt; a</a></strong>
+
+</li>
+<li><strong><a name="item_fold_right1__3a__28_28a_2c_a_29_b_7e_3e_a_2c__5ba_">fold_right1 : ((a, a) b~&gt; a, [a]) b~&gt; a</a></strong>
+
+<p>The fold functions support arbitrary manipulation on lists in an
+``algebraic'' way. In general, the caller gives a ``combining'' operation,
+an initial value, and a list. The fold combines each element of the
+list successively with the initial value to produce eventually a final
+value, which is the result of the fold. TBD</p>
+<p>The expression <code>fold_left(f, init, list)</code> applies <code>f</code> successively
+to: the value <code>init</code> and the first element of the list, the result of
+that application and the second element of the list, the result of
+that next application and the third element of the list, and so on.</p>
+<p>For example,</p>
+<pre>
+   C&lt;fold_left(f, init, ['a','b','c','d'])&gt;</pre>
+<p>is equal to</p>
+<pre>
+   C&lt;f(f(f(f(init, 'a'), 'b'), 'c'), 'd')&gt;</pre>
+<p>The <code>fold_right</code> function is similar but begins by applying <code>f</code> to
+the <em>last</em> element and <code>init</code>:</p>
+<pre>
+   C&lt;fold_right(f, init, ['a','b','c','d'])&gt;</pre>
+<p>is equal to</p>
+<pre>
+   C&lt;f('a',f('b',f('c',f('d', init))))&gt;</pre>
+<p>You can think of a fold as traversing a list with an ``accumulator''
+whose value begins with the <code>init</code> value and is updated to the value
+produced by <code>f</code> working on the accumulator and the next element of
+the list as we traverse the input list.</p>
+<p>The <code>fold_left1</code> (resp. <code>fold_right1</code>) function behaves like its
+counterpart but uses the first (resp. last) element of the list as the
+initial value. This requires that the list be nonempty and the type of
+the initial value, result, and elements all be the same.</p>
+</li>
+<li><strong><a name="item_unzip__3a__28_5b_28a_2c_b_29_5d_29__2d_3e__28_5ba_">unzip : ([(a, b)]) -&gt; ([a], [b])</a></strong>
+
+<p>Split apart a list of paired elements into two parallel lists.</p>
+</li>
+<li><strong><a name="item_zip__3a__28_5ba_5d_2c__5bb_5d_29__2d_3e__28_5b_28a">zip : ([a], [b]) -&gt; ([(a, b)])</a></strong>
+
+<p>Given two parallel lists, combine them into a single list of pairs,
+pairing the <em>i</em>the element of the first list with the <em>i</em>th element
+of the second list.</p>
+</li>
+<li><strong><a name="item_replicate__3a__28int_2c_a_29__7e_3e__5ba_5d">replicate : (Int, a) ~&gt; [a]</a></strong>
+
+<p><code>replicate(n, item)</code> returns a list containing just <code>n</code> copies of <code>item</code>.</p>
+</li>
+<li><strong>filter : (a b-&gt; Bool, [a]) b-&gt; [a]</strong>
+
+<p>Returns just those elements from the list that satisfy the given predicate.</p>
+</li>
+<li><strong><a name="item_c">compose : ((a) b-&gt; c, (d) b-&gt; a) -&gt; (d) b-&gt; c</a></strong>
+
+<p>Given a function <code>f</code> and a function <code>g</code>, returns a function that
+applies <code>g</code> to its argument and <code>f</code> to the result of that.</p>
+</li>
+<li><strong><a name="item_a">id : (a) -&gt; a</a></strong>
+
+<p>Returns its argument.</p>
+</li>
+<li><strong>map : ((a) b-&gt; c, [a]) b-&gt; [c]</strong>
+
+<p>Transforms a list by applying the function to each element of the list.</p>
+<p>More precisely, it returns a list whose <em>i</em>th element is the result
+of applying the given function to the <em>i</em>th element of the given
+list.</p>
+</li>
+<li><strong><a name="item_concatmap__3a__28a_b_2d_3e__5bc_5d_2c__5ba_5d_29_b">concatMap : (a b-&gt; [c], [a]) b-&gt; [c]</a></strong>
+
+<p>Applies the function to each element of the list, and concatenates the
+resulting lists, thus returning a ``flat'' list. Works much like a
+<code>for</code> loop in Links.</p>
+</li>
+<li><strong><a name="item_first_2c_second_2c_third_2c_fourth_2c_fifth_2c_six">first, second, third, fourth, fifth, sixth, sevent, eighth, ninth, tenth</a></strong>
+
+<p>These functions each take a tuple of any (sufficiently large) size and
+return the first, second, etc. element of that tuple. For example:</p>
+<pre>
+    links&gt; third(4, 5, 6, 7, 8, 9)
+    6</pre>
+<p>An attempt to apply one of these functions to a tuple that doesn't
+have enough elements will result in a type error.</p>
+</li>
+<li><strong><a name="item_sum__3a__28_5bint_5d_29__7e_3e_int">sum : ([Int]) ~&gt; Int</a></strong>
+
+<p>Returns the numerical sum of a list of integers.</p>
+</li>
+<li><strong><a name="item_product__3a__28_5bint_5d_29__7e_3e_int">product : ([Int]) ~&gt; Int</a></strong>
+
+<p>Returns the numerical produce of a list of integers.</p>
+</li>
+<li><strong><a name="item_reverse__3a__28_5ba_5d_29__7e_3e__5ba_5d">reverse : ([a]) ~&gt; [a]</a></strong>
+
+<p><code>reverse(list)</code> returns a list of the elements in <code>list</code>, but in the
+reverse order.</p>
+</li>
+<li><strong><a name="item_concat__3a__28_5b_5ba_5d_5d_29__7e_3e__5ba_5d">concat : ([[a]]) ~&gt; [a]</a></strong>
+
+<p>Given a list of lists, this concatenates all of those lists together. E.g.:</p>
+<pre>
+    links&gt; concat([1], [2, 3, 4], [], [5, 6])
+    [1, 2, 3, 4, 5, 6]</pre>
+</li>
+<li><strong><a name="item_join__3a__28_5ba_5d_2c__5b_5ba_5d_5d_29__7e_3e__5b">join : ([a], [[a]]) ~&gt; [a]</a></strong>
+
+<p><code>join(glue, list)</code> returns a list formed by interspersing the ``glue''
+in between each element of <code>list</code> and concatenating them. E.g.:</p>
+<pre>
+    links&gt; join(&quot;/&quot;, [&quot;milk&quot;, &quot;butter&quot;, &quot;eggs&quot;, &quot;bread&quot;])
+    &quot;milk/butter/eggs/bread&quot;</pre>
+<p>(Note the use of an ordinary <code>String</code> as a list of <code>Char</code>s.)</p>
+</li>
+<li><strong>takeWhile : ((a) b-&gt; Bool, [a]) b-&gt; [a]</strong>
+
+<p>Returns the initial segment of the given list which satisfies the
+given predicate.</p>
+</li>
+<li><strong>dropWhile : ((a) -&gt; Bool, [a]) b-&gt; [a]</strong>
+
+<p>Returns all of the given list <em>but</em> the initial segment satisfying
+the given predicate. <code>takeWhile(p,l) ++ dropWhile(p,l)</code> is equal to
+<code>l</code> for any predicate <code>p</code>.</p>
+</li>
+<li><strong><a name="item_ignore__3a__28__29__2d_3e__28_29">ignore : (_) -&gt; ()</a></strong>
+
+<p>Throws away its argument and returns unit, the empty tuple <code>()</code>.</p>
+</li>
+<li><strong><a name="item_maybe">isJust : Maybe (_) -&gt; Bool</a></strong>
+
+<p>Returns <code>true</code> if its argument is <code>Just </code><em>x</em> for some <em>x</em>, that
+is, if it is not <code>Nothing</code>.</p>
+</li>
+<li><strong>search : ((a) b~&gt; Bool, [a]) b~&gt; Maybe (a)</strong>
+
+</li>
+<li><strong><a name="item_find__3a__28_28a_29_b_7e_3e_bool_2c__5ba_5d_29_b_7">find : ((a) b~&gt; Bool, [a]) b~&gt; a</a></strong>
+
+</li>
+<li><strong>fromJust : Maybe (a) ~&gt; a</strong>
+
+<p>Given an argument <code>Just </code><em>x</em>, returns <em>x</em>. Otherwise, raises an
+error.</p>
+</li>
+<li><strong><a name="item_memassoc__3a__28a_2c_5b_28a_2c___29_5d_29__7e_3e_b">memassoc : (a,[(a, _)]) ~&gt; Bool</a></strong>
+
+<p>Given a key and an association list, returns <code>true</code> if the key is 
+in the domain of the association list.</p>
+</li>
+<li><strong>lookup : (a, [(a, b)]) ~&gt; Maybe (b)</strong>
+
+</li>
+<li><strong><a name="item_assoc__3a__28string_2c__5b_28string_2c_b_29_5d_29_">assoc : (String, [(String, b)]) ~&gt; b</a></strong>
+
+</li>
+<li><strong><a name="item_assocall__3a__28string_2c__5b_28string_2c_b_29_5d_">assocAll : (String, [(String, b)]) ~&gt; [b]</a></strong>
+
+</li>
+<li><strong>sortBy : ((a) b-&gt; c, [a]) b-&gt; [a]</strong>
+
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="webrelated_features">Web-related features</a></h2>
+<p>These functions only make sense in the context of web programs.</p>
+<ul>
+<li><strong><a name="item_freshresource__3a__28_29__7e_3e__28_29">freshResource : () ~&gt; ()</a></strong>
+
+<p>Redirects the client to a new page and continues from the call-point.</p>
+<p>The effect is that, after a call to <code>freshResource</code>, if the user hits
+reload in the browser, she will only cause the program to re-execute
+code from the call to freshResource onward.</p>
+<p>This can be used after doing a destructive action (such as updating
+the database) which should not be automatically repeated on a
+subsequent reload.</p>
+<p>Currently only works for server-only Links programs.</p>
+</li>
+<li><strong><a name="item_page">sendSuspend : (((a) -&gt; Page) d~&gt; Page) d~&gt; a</a></strong>
+
+<p><code>sendSuspend(f)</code> calls the function <code>f</code> to generate an
+page and exits the program using that page as the output.</p>
+<p><code>sendSuspend</code> captures the current continuation when it is called and
+passes this as the argument to <code>f</code>. Thus, <code>f</code> can use its argument
+to resume computation at the point where <code>sendSuspend</code> was called.</p>
+<p>See <code>examples/login-flow.links</code> for an example of the use of
+<code>sendSuspend</code>.</p>
+</li>
+</ul>
+<p>
+</p>
+<h2><a name="formlet_library">Formlet library</a></h2>
+<p>These routines can be used with the <code>formlet</code>/<code>yields</code> syntax
+described in <a href="#formlets">Formlets</a>. Familiarize yourself with that mechanism
+before trying to read about these functions.</p>
+<ul>
+<li><strong><a name="item_formlet">xml : (Xml) -&gt; Formlet (())</a></strong>
+
+<p>Given some XML, returns the formlet which displays that XML and
+yields the unit value.</p>
+</li>
+<li><strong>text : String -&gt; Formlet (())</strong>
+
+<p>Given a string, makes an XML text node out of it, and returns the
+formlet which displays that XML and yields the unit value.</p>
+</li>
+<li><strong>plug : (XmlContext, Formlet (a)) -&gt; Formlet (a)</strong>
+
+<p>Transforms the visible (XML) part of a formlet by applying the given
+XML function.</p>
+</li>
+<li><strong>input : Formlet (String)</strong>
+
+<p>Constructs a formlet containing just a simple <code>input</code> field, yielding
+the value entered as a <code>String</code>.</p>
+</li>
+<li><strong>inputValue : (String) ~&gt; Formlet (String)</strong>
+
+<p>Constructs a formlet containing just a simple <code>inpute</code> field; its
+initial text contents are given by the argument.</p>
+</li>
+<li><strong>inputFile : Formlet (String)</strong>
+
+<p>Constructs a formlet containing a simple <code>input</code> field of file-upload type.</p>
+</li>
+<li><strong>inputInt : <code>Formlet(Int)</code></strong>
+
+<p>Constructs a formlet containing a simple inut field whose submission will
+be treated as an <code>Int</code>.</p>
+</li>
+<li><strong>inputIntValue : (Int) ~&gt; <code>Formlet(Int)</code></strong>
+
+<p>Constructs a formlet containing a simple input field whose submission
+will be treated as an <code>Int</code> and whose default value is given in the
+argument.</p>
+</li>
+<li><strong>inputFloat : <code>Formlet(Float)</code></strong>
+
+<p>Constructs a formlet containing a simple input field whose submission
+will be treated as a <code>Float</code>.</p>
+</li>
+<li><strong>textarea : (String) ~&gt; Formlet (String)</strong>
+
+<p>Constructs a formlet containing a simple textarea (multi-line text
+input) field whose contents default to the argument.</p>
+</li>
+<li><strong>submitButton : (String) ~&gt; Formlet (Bool)</strong>
+
+</li>
+<li><strong>resetButton : (String) ~&gt; Formlet (Bool)</strong>
+
+</li>
+<li><strong>pushButton : (String) ~&gt; Formlet (Bool)</strong>
+
+</li>
+<li><strong>button : (String, [|Submit|Reset|Button|]) ~&gt; Formlet (Bool)</strong>
+
+<p><code>button(&quot;Text&quot;, behavior)</code> constructs a simple button element that
+will yield <code>true</code> if this button is the one that submits the form and
+<code>false</code> otherwise. <code>behavior</code> choose whether the button is an HTML
+submit button, a reset button, or an undistinguished button (see the
+HTML spec).</p>
+<p>The other forms are shortcuts for corresponding choices of <code>behavior</code>.</p>
+</li>
+<li><strong>checkbox : Formlet (Bool)</strong>
+
+<p>Constructs a formlet containing a simple checkbox field; yields
+<code>true</code> if the checkbox is checked at submit time, and <code>false</code> if
+not.</p>
+</li>
+<li><strong>inputRadiogroup : ([a], a, ([(Xml, a)]) {}~&gt; Xml) -&gt; Formlet (a)</strong>
+
+<p>Constructs a formlet composed of a set of radio buttons, only one of
+which can be selected at a time--a <em>radio group</em>.</p>
+<p>The first argument gives a list of items identified simply by their keys.</p>
+<p>The second argument chooses the initially selected button by its key.</p>
+<p>The third argument is a ``layout'' function. To this is passed a list of
+the keys paired up with the HTML representations of the corresponding
+buttons. The layout function should return some HTML which uses all of
+these buttons, each precisely once. It could for example associate
+each button with some text, or arrange them in some sort of table
+pattern. The HTML of the formlet will consist of the HTML returned by
+the layout function.</p>
+</li>
+<li><strong>choice : ([(a, String)]) ~&gt; Formlet (a)</strong>
+
+<p>Constructs a formlet that contains a pop-up menu (<code>select</code> element)
+whose options are given by the list. The argument is a list of pairs,
+whose second element is the human-readable text of the option, and
+whose first element is the unique key that will be used to identify
+the choice on submission. The value yielded by the formlet will be 
+one of these keys.</p>
+</li>
+<li><strong>choiceDefault : ([(a,String)], a) ~&gt; Formlet (a)</strong>
+
+<p>Like <code>choice</code>, this constructs a formlet containing a pop-up menu
+(<code>select</code> element). The second parameter is the key of a choice that
+should be selected by default.</p>
+<p>(FIXME: This function currently doesn't work.)</p>
+</li>
+<li><strong>choices : ([(a, String, Bool)]) ~&gt; Formlet ([a])</strong>
+
+<p>Constructs a formlet containing a multi-select scrollbox containing
+the options listed in the argument, as per <code>choice</code> above.</p>
+</li>
+</ul>
+<p>
+</p>
+<hr />
+<h1><a name="running_links">Running links</a></h1>
+<p>Links can be run either as a CGI script through a web server such as
+Apache, or from the command line.</p>
+<p>When run as a CGI script Links must be passed a filename as an
+argument:</p>
+<pre>
+  links filename</pre>
+<p>The source code to evaluate can be specified in several ways:</p>
+<pre>
+  links                # run interactively
+  links -e exp         # evaluate exp, print its result
+  links filename       # run filename</pre>
+<p>Command line flags can be used to enable/disable some features:</p>
+<pre>
+  -O                   enable optimisation
+  -n                   don't print types
+  -d                   debug mode (for hacking on links itself)</pre>
+<p>A configuration file can be chosen using this command-line option:</p>
+<pre>
+  --config=&lt;filename&gt;  set a configuration file</pre>
+<p>These other options can be fun, too:</p>
+<pre>
+  --pp=&lt;command&gt;          run all input through UNIX &lt;command&gt; before parsing
+  --precompile=&lt;filename&gt; precompile and store a cached version of &lt;filename&gt;
+  --dump=&lt;filename&gt;       find and print out the cached version of &lt;filename&gt;</pre>
+<p>
+</p>
+<h2><a name="the_interactive_shell">The interactive shell</a></h2>
+<p>The interactive shell allows server-side code to be entered
+dynamically. In order to evaluate an expression it must be terminated
+with a semi-colon followed by a new line:</p>
+<pre>
+  ./links
+  links&gt; 1+2;
+  3 : Int
+  links&gt;</pre>
+<p>The interpreter outputs the resulting value and its type.</p>
+<p>
+</p>
+<h3><a name="directives">Directives</a></h3>
+<p>The interpreter supports a number of directives. Typing one of these
+at the interactive loop has an immediate effect.</p>
+<dl>
+<dt><strong><a name="item__directives"><code>@directives</code></a></strong></dt>
+
+<dd>
+<p>list available directives</p>
+</dd>
+<dt><strong><a name="item__settings"><code>@settings</code></a></strong></dt>
+
+<dd>
+<p>print available settings (see <a href="#configuration_settings">Configuration settings</a>)</p>
+</dd>
+<dt><strong><a name="item__set"><code>@set</code></a></strong></dt>
+
+<dd>
+<p>change the value of a setting (see <a href="#configuration_settings">Configuration settings</a>)</p>
+</dd>
+<dt><strong><a name="item__builtins"><code>@builtins</code></a></strong></dt>
+
+<dd>
+<p>list builtin functions and values</p>
+</dd>
+<dt><strong><a name="item__quit"><code>@quit</code></a></strong></dt>
+
+<dd>
+<p>exit the interpreter</p>
+</dd>
+<dt><strong><a name="item__typeenv"><code>@typeenv</code></a></strong></dt>
+
+<dd>
+<p>display the current type environment</p>
+</dd>
+<dt><strong><a name="item__env"><code>@env</code></a></strong></dt>
+
+<dd>
+<p>display the current value environment</p>
+</dd>
+<dt><strong><a name="item__load"><code>@load</code></a></strong></dt>
+
+<dd>
+<p>load in a Links source file, replacing the current environment</p>
+</dd>
+<dt><strong><a name="item__withtype"><code>@withtype</code></a></strong></dt>
+
+<dd>
+<p>search for functions that match the given type</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="configuration_settings">Configuration settings</a></h2>
+<p>Links offers a number of settings which can affect the behavior of the
+interactive loop or the web interface.</p>
+<p>The available settings can be discovered in the interactive loop using
+the <a href="#item__settings"><code>@settings</code></a> directive:</p>
+<pre>
+    links&gt; @settings;
+    
+    User settings
+     show_unification          false
+     show_typechecking         false
+    ...</pre>
+<p>A setting can be modified during an interactive session using the
+<a href="#item__set"><code>@set</code></a> directive:</p>
+<pre>
+    links&gt; @set show_typechecking true;</pre>
+<p>Settings can also be configured using a configuration file. To select
+a configuration file, use the command-line option <code>--config</code>:</p>
+<pre>
+    $ links --config=&lt;filename&gt;</pre>
+<p>A configuration file is just a set of lines, each of which contains a
+setting formatted as 
+<em>&lt;setting-name&gt;</em><code>=</code><em>&lt;setting-value&gt;</em>. 
+For example:</p>
+<pre>
+    debug=on
+    database_driver=postgresql</pre>
+<p>This is particularly useful for configuring settings for a web
+application, where directives cannot otherwise be given.</p>
+
+</body>
+
+</html>
