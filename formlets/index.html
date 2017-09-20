@@ -1,81 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
-<title>The Essence of Form Abstraction. Cooper, Lindley, Wadler, Yallop. 2008.</title>
-<link rel="stylesheet" type="text/css" href="http://homepages.inf.ed.ac.uk/wadler/style.css">
-<link rel="stylesheet" type="text/css" href="../links.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>The Essence of Form Abstraction. Cooper, Lindley, Wadler, Yallop. 2008.</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <header>
+      <img src="../img/logo.svg" class="logo">
+      <h1>The essence of form abstraction</h1>
+    </header>
+    <main>
 
-<body>
-<h1>The essence of form abstraction</h1>
+      <section>
+        <h2>Abstract</h2>
+        Abstraction is the cornerstone of high-level programming; HTML forms are the principal medium of web interaction. However,
+        most web programming environments do not support abstraction of form components, leading to a lack of compositionality.
+        Using a semantics based on idioms, we show how to support compositional form construction and give a convenient syntax.
+      </section>
 
-<div class="content">
+      <section>
+        <h2>Full text</h2>
+        <a href="/papers/formlets-essence.pdf">The Essence of Form Abstraction</a> (<a href="http://research.microsoft.com/~grama/APLAS2008/">APLAS 2008</a>)
+        (PDF).
+      </section>
 
-<p>
-<h3>Abstract</h3> 
-Abstraction is the cornerstone of high-level programming; HTML forms
-are the principal medium of web interaction. However, most web
-programming environments do not support abstraction of form
-components, leading to a lack of compositionality. Using a semantics
-based on idioms, we show how to support compositional form
-construction and give a convenient syntax.
-</p>
+      <section>
+        <h2>Tech report</h2>
+        <a href="/papers/formlets-tr2008.pdf" class="dead">An idiom's guide to formlets</a>. Contains full details of the validation extension,
+        amongst other things.
+      </section>
 
-<p>
-<h3>Full text</h3>
-<a href="/papers/formlets-essence.pdf">The Essence of Form Abstraction</a> (<a href="http://research.microsoft.com/~grama/APLAS2008/">APLAS 2008</a>) (PDF).
-</p>
+      <section>
+        <h2>Source code</h2> <a href="/ocaml-formlets-june-2008.tar.gz">Complete OCaml code for formlets</a> including all extensions described in the paper.
+      </section>
 
-<p>
-<h3>Tech report</h3>
-<a href="/papers/formlets-tr2008.pdf">An idiom's guide to formlets</a>. 
-Contains full details of the validation extension, amongst other things.
-</p>
+      <section>
+        <h2>Related</h2>
+        <ul>
+          <li>
+            "<a href="/papers/undergrads/steve.pdf">Creating linksCollab : An
+            Assessment of Links as a Web Development Language</a>," Steve Strugnell, 2008. <br />
+            <!--- <a href="http://linkscollab.stevestrugnell.net/source/">Source code</a>.  <br /> -->
+            A bachelor's thesis describing the port of a commercial PHP project-management application to the Links version of Formlets,
+            including an in-depth comparison between Links formlets and forms implemented in PHP. </li>
 
-<p>
-<h3>Source code</h3> <a
-href="/ocaml-formlets-june-2008.tar.gz">Complete OCaml code for
-formlets</a> including all extensions described in the paper.
-</p>
+          <li> <a href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/formlets">Formlets Haskell module</a> by Chris
+            Eidhof. <a href="Http://Blog.tupil.com/formlets-in-haskell/">Tutorial</a>.
 
-<p>
-<h3>Related</h3>
+            <li><a href="http://docs.plt-scheme.org/web-server/formlets.html">Formlets Scheme module</a> by Jay McCarthy.
+            </li>
+        </ul>
+      </section>
 
-<ul>
+      <section>
+        <h2>Citation</h2>
+        <ul>
+          <li>
+            <strong>Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.</strong>
+            "<a href="/papers/formlets-essence.pdf">The essence of form
+            abstraction</a>." In <cite>Proceedings of the Sixth Asian Symposium on
+            Programming Languages and Systems</cite>, 2008.
+          </li>
+          <li>
+            <strong>Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.</strong>"
+            <a href="/papers/formlets-tr2008.pdf">An idiom's guide to formlets</a>."
+            Technical report, University of Edinburgh, 2008.
+          </li>
+        </ul>
 
-<li>
-"<a href="/papers/undergrads/steve.pdf">Creating linksCollab : An
-Assessment of Links as a Web Development Language</a>," Steve
-Strugnell, 2008. <br />
-<!--- <a href="http://linkscollab.stevestrugnell.net/source/">Source code</a>.  <br /> -->
-A bachelor's thesis describing the port of a commercial PHP
-project-management application to the Links version of Formlets,
-including an in-depth comparison between Links formlets and forms
-implemented in PHP.  </li>
-
-<li> <a href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/formlets">Formlets Haskell module</a> by Chris Eidhof. <a href="Http://Blog.tupil.com/formlets-in-haskell/">Tutorial</a>.
-
-<li><a href="http://docs.plt-scheme.org/web-server/formlets.html">Formlets Scheme module</a> by Jay McCarthy.
-</li>
-</ul>
-</p>
-
-<p><h3>Citation</h3> <br />
-
-Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.
-"<a href="/papers/formlets-essence.pdf">The essence of form
-abstraction</a>." In <cite>Proceedings of the Sixth Asian Symposium on
-Programming Languages and Systems</cite>, 2008.
-</p>
-<p>
-Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.
-"<a href="/papers/formlets-tr2008.pdf">An idiom's guide to formlets</a>."
-Technical report, University of Edinburgh, 2008.
-</p>
-<p>
-<h3>BibTeX</h3>
-<pre>
+        <h3>BibTeX</h3>
+        <pre>
 @inproceedings{CLWY08essence,
   title = {The essence of form abstraction},
   author = {Ezra Cooper and Sam Lindley and Philip Wadler and Jeremy Yallop},
@@ -89,9 +85,7 @@ Technical report, University of Edinburgh, 2008.
   year = {2008}
 }
 </pre>
-</p>
-
-</div>
-
-<hr>
-</body> </html>
+      </section>
+    </main>
+  </body>
+</html>
