@@ -57,7 +57,7 @@
           is no easy way to link these, for example, to be sure that
           an HTML form or an SQL query produces the type of data that
           the Java code expects. This problem is called the
-          impedance <em>mismatch problem</em>.
+          <em>impedance mismatch problem</em>.
         </p>
         <p>
           Links eases the impedance mismatch problem by providing a single language
@@ -73,26 +73,42 @@
           it adds new web-centric features of its own.
         </p>
         <p>
-          The original Links development effort ended at the beginning of 2009. In
+          The initial Links development effort was funded by EPSRC grant 
+		<a href="https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/D046769/1">EP/D046769/1</a> from 2005-2009. In
           2014 development on Links resumed with a focus on adding
           <a href="http://groups.inf.ed.ac.uk/abcd">session types</a>
-          to Links. Other active areas of research which are driving
+          to Links, funded by EPSRC Programme Grant "From Data Types to Session Types: A Basis for Concurrency and Distribution" 
+	  (<a href="https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/K034413/1">EP/K034413/1</a>).
+	  Other active areas of research which are driving
           Links development include work on adding algebraic effects
           and effect handlers to Links and
           the <a href="http://homepages.inf.ed.ac.uk/jcheney/group/skye.html">Skye</a>
           project, which builds on Links to support scientific data
-          curation.
+          curation (funded by the European Research Council, grant number 682315.
         </p>
       </section>
 
       <section class="publications-section">
         <h2>Publications</h2>
         <ul>
+	  <li>
+		  <a href="https://doi.org/10.1016/j.scico.2020.102499">A Polymorphic RPC Calculus</a>.
+		  Kwanghoon Choi, James Cheney, Simon Fowler and Sam Lindley.
+		  Science of Computer Programming 197:102499, October 2020. 
+		  Preliminary version presented at SBMF 2019.
+	  <li>
+            <a href="https://doi.org/10.4230/LIPIcs.FSCD.2020.28">Strongly Normalizing Higher-Order Relational ueries</a>.
+            Wilmer Ricciotti and James Cheney.  
+		  <a href="https://fscd2020.org/">FSCD 2020</a>
           <li>
             <a href="http://www.simonjf.com/writing/mvuc.pdf">Model-View-Update-Communicate: Session Types meet the Elm Architecture</a>.
             Simon Fowler.
             <a href="http://2020.ecoop.org/">ECOOP 2020</a>.
           </li>
+	  <li>
+		  <a href="https://arxiv.org/abs/2003.02191"</a>Language-Integrated Updatable Views</a>.
+	      Rudi Horn, Simon Fowler and James Cheney.
+	      To appear, post-proceedings of IFL 2019.
           <li>
             <a href="http://homepages.inf.ed.ac.uk/slindley/papers/freezeml.pdf">FreezeML: Complete and Easy Type Inference for First-Class Polymorphism</a>.
             Frank Emrich, Sam Lindley, Jan Stolarek, James Cheney, and Jonathan Coates.
@@ -106,6 +122,11 @@
           <li>
             <a href="https://arxiv.org/abs/1905.02051">Language-integrated provenance by trace analysis</a>, Stefan Fehrenbach and James Cheney. <a href="https://pldi19.sigplan.org/home/dbpl-2019">DBPL 2019</a>.
           </li>
+	  <li>
+	     <a href="https://doi.org/10.1145/3315507.3330202">Mixing Set and BAg Semantics</a>.
+	     Wilmer Ricciotti and James Cheney.
+	     <a href="https://pldi19.sigplan.org/home/dbpl-2019">DBPL 2019</a>.
+	  </li>
           <li>
             <a href="http://www.simonjf.com/writing/zap.pdf">Exceptional Asynchronous Session Types: Session Types without Tiers</a>.
             Simon Fowler, Sam Lindley, J. Garrett Morris, and S&aacute;ra Decova.
@@ -208,7 +229,6 @@
         <ul>
           <li><a href="http://homepages.inf.ed.ac.uk/jcheney/">James Cheney</a>.</li>
           <li>Frank Emrich.</li>
-          <li><a href="http://stefan-fehrenbach.net/">Stefan Fehrenbach</a>.</li>
           <li><a href="http://simonjf.com/">Simon Fowler</a>.</li>
           <li><a href="https://www.dhil.net/research/">Daniel Hillerström</a>.</li>
           <li><a href="http://rudi-horn.de/About">Rudi Horn</a></li>
@@ -220,6 +240,7 @@
         <ul>
           <li>Ezra Cooper.</li>
           <li>Gilles Dubochet.</li>
+          <li><a href="http://stefan-fehrenbach.net/">Stefan Fehrenbach</a>.</li>
           <li><a href="https://jgbm.github.io/">Garrett Morris</a>.</li>
           <li>Jeremy Yallop.</li>
         </ul>
@@ -295,6 +316,11 @@
       <section class="interns-section">
         <h2>Interns</h2>
         <ul>
+	  <li>Yueyang Tang, May--August 2020.  Yueyang is working on 
+	    improvements to Links, including dramatically speeding up
+  	    serialization of large query expressions and supporting 
+	    function definitions by case analysis
+		</li>
           <li>Jonathan Coates, June--July 2019.  Jonathan worked on
               the Links codebase. He implemented support for
               first-class polymorphism, syntactic sugar for effects,
