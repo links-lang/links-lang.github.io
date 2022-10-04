@@ -21,7 +21,7 @@
       <h1>Links: Linking Theory to Practice for the Web</h1>
       <div class="links">
         <div>
-          <a href="https://github.com/links-lang/links/blob/master/INSTALL.md" class="btn">Get Links<small>0.9 - Burghmuirhead</small></a>
+          <a href="https://github.com/links-lang/links/blob/master/INSTALL.md" class="btn">Get Links<small>0.9.7 - Burghmuirhead</small></a>
           <div class="quick-install-info">
             Install with <a href="http://opam.ocaml.org/">OPAM</a>
             <code>opam install links</code>
@@ -30,7 +30,7 @@
         </div>
         <div>
           <a class="btn" href="http://links-lang.org/quick-help.html">Docs</a>
-          <a href="http://examples.links-lang.org:8080/">Demo programs</a>
+          <a href="http://examples.links-lang.org:8080/main">Demo programs</a>
           <a href="http://lists.inf.ed.ac.uk/mailman/listinfo/links-users">links-users mailing list</a>
         </div>
       </div>
@@ -57,7 +57,7 @@
           is no easy way to link these, for example, to be sure that
           an HTML form or an SQL query produces the type of data that
           the Java code expects. This problem is called the
-          impedance <em>mismatch problem</em>.
+          <em>impedance mismatch problem</em>.
         </p>
         <p>
           Links eases the impedance mismatch problem by providing a single language
@@ -73,30 +73,91 @@
           it adds new web-centric features of its own.
         </p>
         <p>
-          The original Links development effort ended at the beginning of 2009. In
-          2014 development on Links resumed with a focus on adding
+          The initial Links development effort was funded by EPSRC grant
+          <a href="https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/D046769/1">EP/D046769/1</a>
+          from 2005-2009. In 2014 development on Links resumed with a
+          focus on adding
           <a href="http://groups.inf.ed.ac.uk/abcd">session types</a>
-          to Links. Other active areas of research which are driving
+          to Links, funded by EPSRC Programme Grant "From Data Types to Session Types: A Basis for Concurrency and Distribution"
+	  (<a href="https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/K034413/1">EP/K034413/1</a>).
+	  Other active areas of research which are driving
           Links development include work on adding algebraic effects
-          and effect handlers to Links and
+          and effect handlers to Links (UKRI Future Leaders Fellowship <a href="https://effect-handlers.org/">EHOP</a>, grant number MR/T043830/1) and
           the <a href="http://homepages.inf.ed.ac.uk/jcheney/group/skye.html">Skye</a>
           project, which builds on Links to support scientific data
-          curation.
+          curation (funded by the European Research Council, grant number 682315).
         </p>
       </section>
 
       <section class="publications-section">
         <h2>Publications</h2>
-        <ul>
+      <ul>
+	      <li><a href="https://arxiv.org/abs/2107.10793">A Typed Slicing Compilation of the Polymorphic RPC Calculus</a>,
+	    Kwanghoon Choi, James Cheney, Sam Lindley, and Bob Reynders.
+	    PPDP 2021.
+	  </li>
+	  <li><a href="https://arxiv.org/abs/2107.11347">Comprehending Nulls</a>. James Cheney and Wilmer Ricciotti.
+	    <a href="https://sites.google.com/view/dbpl2021">DBPL 2021</a>.
+	  </li>
+	  <li><a href="https://arxiv.org/abs/2106.00412">Curating Covid-19 data in Links</a>.
+	    Vashti Galpin and James Cheney. IPAW 2021 demo paper.
+	  </li>
           <li>
-            <a>Language-integrated provenance by trace analysis</a>, Stefan Fehrenbach and James Cheney, to appear, <a href="https://pldi19.sigplan.org/track/dbpl-2019-papers">DBPL 2019</a>.
+            <a href="https://doi.org/10.2218/ijdc.v15i1.717">Cross-tier web programming for curated databases: a case study</a>. Simon Fowler, Simon Harding, Joanna Sharman, and James Cheney. Pre-proceedings, <a href="https://www.dcc.ac.uk/events/idcc20">IDCC 2020</a>.
           </li>
+	  <li><a href="https://arxiv.org/abs/2101.04102">Query Lifting: Language-integrated query for heterogeneous nested collections</a>.
+	    Wilmer Ricciotti and James Cheney. ESOP 2021.
+	  </li>
+	  <li>
+            <a href="https://arxiv.org/abs/2007.00605">Effects for
+            Efficiency: Asymptotic Speedup with First-Class
+            Control</a>. Daniel Hillerstr&ouml;m, Sam Lindley, and
+            John Longley. <a href="https://icfp20.sigplan.org/">ICFP
+            2020</a>.
+          </li>
+	  <li>
+	    <a href="https://arxiv.org/abs/1910.10988">A
+		  Polymorphic RPC Calculus</a>. Kwanghoon Choi, James
+		  Cheney, Simon Fowler, and Sam Lindley.  Science of
+		  Computer Programming 197:102499, October 2020.
+		  Preliminary version presented at SBMF 2019.
+	  <li>
+            <a href="https://doi.org/10.4230/LIPIcs.FSCD.2020.28">Strongly
+            Normalizing Higher-Order Relational Queries</a>.  Wilmer
+            Ricciotti and James Cheney. <a href="https://fscd2020.org/">FSCD 2020</a>.
+          <li>
+            <a href="https://doi.org/10.4230/LIPIcs.ECOOP.2020.14">Model-View-Update-Communicate: Session Types meet the Elm Architecture</a>.
+            Simon Fowler.
+            <a href="http://2020.ecoop.org/">ECOOP 2020</a>.
+          </li>
+	  <li>
+	  <a href="https://arxiv.org/abs/2003.02191"</a>Language-Integrated
+	      Updatable Views</a>.  Rudi Horn, Simon Fowler and James
+	      Cheney.  Post-proceedings of IFL 2019.
+          <li>
+            <a href="https://doi.org/10.1145/3385412.3386003">FreezeML: Complete and Easy Type Inference for First-Class Polymorphism</a>.
+            Frank Emrich, Sam Lindley, Jan Stolarek, James Cheney, and Jonathan Coates.
+            <a href="https://conf.researchr.org/home/pldi-2020">PLDI 2020</a>.
+          </li>
+          <li>
+            <a href="http://homepages.inf.ed.ac.uk/slindley/papers/ehgc.pdf">Effect handlers via generalised continuations</a>.
+	    Daniel Hillerstr&ouml;m, Sam Lindley, and Robert Atkey.
+            <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming">JFP special issue on effect handlers 2020</a>.
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/1905.02051">Language-integrated provenance by trace analysis</a>, Stefan Fehrenbach and James Cheney. <a href="https://pldi19.sigplan.org/home/dbpl-2019">DBPL 2019</a>.
+          </li>
+	  <li>
+	     <a href="https://doi.org/10.1145/3315507.3330202">Mixing Set and Bag Semantics</a>.
+	     Wilmer Ricciotti and James Cheney.
+	     <a href="https://pldi19.sigplan.org/home/dbpl-2019">DBPL 2019</a>.
+	  </li>
           <li>
             <a href="http://www.simonjf.com/writing/zap.pdf">Exceptional Asynchronous Session Types: Session Types without Tiers</a>.
             Simon Fowler, Sam Lindley, J. Garrett Morris, and S&aacute;ra Decova.
             <a href="http://popl19.sigplan.org/">POPL 2019</a>.
           </li>
-          <li> 
+          <li>
 	    <a href="http://homepages.inf.ed.ac.uk/slindley/papers/shallow-extended.pdf">Shallow Effect Handlers</a>.
 	    Daniel Hillerstr&ouml;m and Sam Lindley.
             <a href="http://aplas2018.org/">APLAS 2018</a>.
@@ -118,8 +179,8 @@
             <a href="http://homepages.inf.ed.ac.uk/slindley/papers/fst.pdf">Lightweight functional session types</a>.
             Sam Lindley and J. Garrett Morris. In
             <a href="http://www.riverpublishers.com/book_details.php?book_id=439">
-              Behavioural Types: from Theory to Tools
-            </a>, River Publishers, 2017.
+              Behavioural Types: from Theory to Tools</a>, River
+              Publishers, 2017.
           </li>
           <li>
             <a href="papers/PPDP2016FehrenbachC.pdf">Language-integrated provenance</a>.
@@ -127,12 +188,12 @@
           </li>
           <li>
             <a href="http://homepages.inf.ed.ac.uk/s1467124/papers/mlabstract2016.pdf">Compiling Links Effect Handlers to the OCaml Backend</a>.
-            Daniel Hillerström, Sam Lindley, and KC Sivaramakrishnan.
+            Daniel Hillerstr&ouml;m, Sam Lindley, and KC Sivaramakrishnan.
             <a href="http://www.mlworkshop.org/ml2016">ML Workshop 2016</a>.
           </li>
           <li>
             <a href="http://homepages.inf.ed.ac.uk/s1467124/papers/liberating_effects-tyde2016.pdf">Liberating Effects with Rows and Handlers</a>.
-            Daniel Hillerström and Sam Lindley. In the proceedings of
+            Daniel Hillerstr&ouml;m and Sam Lindley. In the proceedings of
             <a href="http://conf.researchr.org/track/icfp-2016/tyde-2016-papers">TyDe 2016</a>.
           </li>
           <li>
@@ -162,6 +223,16 @@
             In the proceedings of
             <a href="http://www.cs.cornell.edu/conferences/dbpl2011/">DBPL 2011</a>.
           </li>
+	  <li>
+		  <a href="https://doi.org/10.1007/978-3-642-03793-1_3">The Script-Writer's Dream: How to Write Great SQL in Your Own Language, and Be Sure It Will Succeed</a>.
+		  Ezra Cooper.
+		  In the proceedings of <a href="">DBPL 2009</a>
+	      </li>
+	  <li>
+		  <a href="https://doi.org/10.1145/1599410.1599439">The RPC calculus</a>.
+		  Ezra Cooper, Philip Wadler.
+		  In the proceedings of <a href="">PPDP 2009</a>
+	      </li>
           <li>
             <a href="formlets/">The essence of form abstraction</a>.
             Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.
@@ -179,31 +250,38 @@
       <section class="grant-section">
         <h2>Grants</h2>
         <ul>
+		<li><a href="https://effect-handlers.org/">EHOP</a>, UKRI Future Leaders Fellowship grant number MR/T043830/1.</li>
           <li><a href="http://homepages.inf.ed.ac.uk/jcheney/group/skye.html">Skye</a>, ERC Consolidator Grant (2016-2021).</li>
-          <li><a href="http://groups.inf.ed.ac.uk/abcd/">A Basis for Concurrency and Distribution</a>, EPSRC Programme Grant (2013-2019).</li>
+          <li><a href="http://groups.inf.ed.ac.uk/abcd/">A Basis for Concurrency and Distribution</a>, EPSRC Programme Grant (2013-2020).</li>
+		<li>Google Research Awards <em>Database Wikis</em> (2011), <em>Synchronized Database Wikis</em> (2012), and <em>Language-Integrated Provenance</em> (2014-15).</li>
           <li><a href="epsrc05/case.pdf">Original grant proposal</a> for EPSRC (2005).
           </li>
-          <li><a href="epsrc05/LShift_Links.pdf">Letter of support from LShift</a></li>
-          <li><a href="epsrc05/rundeep.doc">Letter of support from Run Deep</a></li>
+          <li><a href="epsrc05/LShift_Links.pdf">Letter of support from LShift</a>.</li>
+          <li><a href="epsrc05/rundeep.doc">Letter of support from Run Deep</a>.</li>
         </ul>
       </section>
 
       <section class="team-section">
         <h2>Core team</h2>
         <ul>
-          <li>Ezra Cooper, PhD student (graduated).</li>
           <li><a href="http://homepages.inf.ed.ac.uk/jcheney/">James Cheney</a>.</li>
-          <li>Gilles Dubochet, MSc student (graduated).</li>
-          <li>Frank Emrich.</li>
-          <li><a href="http://stefan-fehrenbach.net/">Stefan Fehrenbach</a>.</li>
+          <li><a href="https://www.inf.ed.ac.uk/people/students/Frank_Emrich.html">Frank Emrich</a>.</li>
           <li><a href="http://simonjf.com/">Simon Fowler</a>.</li>
-          <li><a href="http://homepages.inf.ed.ac.uk/s1467124/">Daniel Hillerström</a>.</li>
-          <li><a href="http://rudi-horn.de/About">Rudi Horn</a></li>
+          <li><a href="https://homepages.inf.ed.ac.uk/vgalpin1/">Vashti Galpin</a>.</li>
+          <li><a href="https://www.dhil.net/research/">Daniel Hillerstr&ouml;m</a>.</li>
+          <li><a href="http://rudi-horn.de/About">Rudi Horn</a>.</li>
           <li><a href="http://homepages.inf.ed.ac.uk/slindley/">Sam Lindley</a>.</li>
-          <li><a href="https://jgbm.github.io/">Garrett Morris</a> (now at the University of Kansas).</li>
+          <li><a href="http://www.wilmer-ricciotti.net/index.shtml">Wilmer Ricciotti</a>.</li>
           <li><a href="http://ics.p.lodz.pl/~stolarek">Jan Stolarek</a>.</li>
           <li><a href="http://homepages.inf.ed.ac.uk/wadler/">Philip Wadler</a>.</li>
-          <li>Jeremy Yallop, PhD student (graduated).</li>
+        </ul>
+        <h2>Alumni</h2>
+        <ul>
+          <li>Ezra Cooper.</li>
+          <li>Gilles Dubochet.</li>
+          <li><a href="http://stefan-fehrenbach.net/">Stefan Fehrenbach</a>.</li>
+          <li><a href="https://jgbm.github.io/">Garrett Morris</a>.</li>
+          <li>Jeremy Yallop.</li>
         </ul>
       </section>
 
@@ -255,15 +333,15 @@
       <section class="msc-section">
         <h2>MSc Projects</h2>
         <ul>
+          <li>Compiling Links to WebAssembly. Aaron Song (2021).</li>
           <li><a href="papers/mscs/Master_Thesis_Thomas_Weber_1450761.pdf">Uselets: UIs using Actors as an Abstraction for Composable Communicating Components</a>. Thomas Weber (LMU/University of Augsburg/TU Munich, 2018).</li>
-          <li><a href="http://homepages.inf.ed.ac.uk/s1467124/papers/thesis2016.pdf">Compilation of Effect Handlers and their Applications in Concurrency</a>.
-             Daniel Hillerström (2016). </li>
-          <li><a href="http://project-archive.inf.ed.ac.uk/msc/20150206/msc_proj.pdf">Handlers for Algebraic Effects in Links</a>.
-             Daniel Hillerström (2015). </li>
+          <li><a href="https://dhil.net/research/papers/thesis2016.pdf">Compilation of Effect Handlers and their Applications in Concurrency</a>.
+             Daniel Hillerstr&ouml;m (2016). </li>
+          <li><a href="https://dhil.net/research/papers/thesis2015.pdf">Handlers for Algebraic Effects in Links</a>.
+            Daniel Hillerstr&ouml;m (2015). </li>
           <li>
             <a href="papers/mscs/chifeng.pdf">
-             Functional reactive animation in SVG for the web via Links
-            </a>.
+             Functional reactive animation in SVG for the web via Links</a>.
             Chi-Feng Chou (2011).
           </li>
           <li>
@@ -282,32 +360,76 @@
       <section class="interns-section">
         <h2>Interns</h2>
         <ul>
-<li>Jonathan Coates, June--July 2019.
-    Jonathan worked on the Links codebase. He implemented support for
-    first-class polymorphism, syntactic sugar for effects, and fixed
-    numerous bugs.</li>
-<li>Tom Davey, June--July 2019.
-    Tom adapted TryLinks for use with Jupyter Notebook.</li>
-<li>Arek Mikolajczak, June--August 2018.
-Arek worked on TryLinks.
-</li>
-<li>Nicole Meng, June--July 2018.</li>
-<li>Thomas Weber, May--October 2017.  Thomas worked on <em>uselets</em>, a new abstraction for UI programming in Links, and made several contributions including a cleanup of the JavaScript runtime code, a redesign of this home page, and the Links logo.  He also developed the <a href="https://github.com/elordin/uselets">Uselets</a> library and examples.</li>
-<li>Jake Browning, Summer 2017.
-    Jake implemented a reactive programming library for Links inspired by Elm.</li>
-<li>Sára Decova, Summer 2017.
-    Sára implemented a collection of Links applications making use of
-    session types in the presence of distribution and failure.</li>
-          <li>Austėja Elvina Brasiūnaitė, Summer 2014.
-              Elvina helped us to develop session types in Links by building and testing lots of examples.</li>
-          <li>Dariusz Jędrzejczak, Summer 2014. Dariusz significantly speeded up JavaScript compilation in Links and
-              built and evaluated the performance of a number of games written in Links.</li>
-          <li>Gabriel Radanne, Summer 2012. Gabriel extended the Links to OCaml compiler developed by
+          <li>Yi Zhou, June&ndash;July 2021. Yi implemented several
+          benchmark programs for Links, extended the command-line
+          interface of Links, and tweaked the internal handling of
+          file paths.</li>
+          <li>Robin Jourde, May&ndash;July 2021. Robin extended Links
+          with effect aliases, first-class operation polymorphism, and
+          fresh operation label generation.</li>
+          <li>Dee Yeum, July&ndash;August 2021. Dee worked on headless
+          testing of client-side Links applications.</li>
+          <li>Samo Novak, June&ndash;August 2021. Samo implemented a
+          round-trip type pretty printer, whose outputs can be
+          successfully parsed by the Links parser.</li>
+	  <li>Yueyang Tang, May&ndash;August 2020.  Yueyang worked on
+	    improvements to Links, including dramatically speeding up
+	    serialization of large query expressions and supporting
+	    function definitions by case analysis
+		</li>
+          <li>Jonathan Coates, June&ndash;July 2019.  Jonathan worked on
+              the Links codebase. He implemented support for
+              first-class polymorphism, syntactic sugar for effects,
+              and fixed numerous bugs.
+          </li>
+          <li>Tom Davey, June&ndash;July 2019.  Tom adapted TryLinks for
+              use with Jupyter Notebook.
+          </li>
+          <li>Arek Mikolajczak, June&ndash;August 2018.  Arek worked on
+              TryLinks.
+          </li>
+          <li>Nicole Meng, June&ndash;July 2018. Nicole worked on
+              implementing the essence of React in Links using effect
+              handlers.
+          </li>
+          <li>Thomas Weber, May&ndash;October 2017.  Thomas worked
+              on <em>uselets</em>, a new abstraction for UI
+              programming in Links, and made several contributions
+              including a cleanup of the JavaScript runtime code, a
+              redesign of this home page, and the Links logo.  He also
+              developed
+              the <a href="https://github.com/elordin/uselets">Uselets</a>
+              library and examples.
+          </li>
+          <li>Jake Browning, Summer 2017.  Jake implemented a reactive
+              programming library for Links inspired by Elm.</li>
+          <li>Sára Decova, Summer 2017.  Sára implemented a collection
+              of Links applications making use of session types in the
+              presence of distribution and failure.
+          </li>
+          <li>Victor Dumitrescu, Summer 2015. Victor worked on
+              applications of session types in Links.
+          </li>
+          <li>Austėja Elvina Brasiūnaitė, Summer 2014.  Elvina helped
+              us to develop session types in Links by building and
+              testing lots of examples.
+          </li>
+          <li>Dariusz Jędrzejczak, Summer 2014. Dariusz significantly
+              speeded up JavaScript compilation in Links and built and
+              evaluated the performance of a number of games written
+              in Links.
+          </li>
+          <li>Gabriel Radanne, Summer 2012. Gabriel extended the Links
+              to OCaml compiler developed by
               <a href="papers/undergrads/steven.pdf">Steven Holmes</a>
-              to handle <a href="http://homepages.inf.ed.ac.uk/slindley/papers/effquot.pdf">database queries</a>.</li>
+              to
+              handle <a href="http://homepages.inf.ed.ac.uk/slindley/papers/effquot.pdf">database
+              queries</a>.
+          </li>
           <li><a href="http://pauillac.inria.fr/~tmartine/">Thierry
-           Martinez</a>, Mar–Aug 2006. Thierry experimented with
-           approaches to statically typing XML in Links.</li>
+               Martinez</a>, Mar–Aug 2006. Thierry experimented with
+               approaches to statically typing XML in Links.
+          </li>
         </ul>
       </section>
 
