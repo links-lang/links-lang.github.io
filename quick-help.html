@@ -4,12 +4,17 @@
 <head>
 <title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rev="made" href="mailto:root@yosemite.internal.macports.net" />
 </head>
 
 <body>
 
-
+  <style type="text/css">
+    pre {
+	overflow: auto;
+    }
+  </style>
 
 <ul id="index">
   <li><a href="#Links-Syntax">Links Syntax</a>
@@ -179,7 +184,7 @@
 <p>A list can be created directly by wrapping a series of comma-separated expressions between brackets:</p>
 
 <pre><code>    [1, 4, 9, 16]
-    
+
     [&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;]
 
     []
@@ -338,7 +343,7 @@
 <p>Links provides two special attributes for programming with HTML forms: <code>l:name</code>, which binds the value of an input field to a variable, and <code>l:onsubmit</code>, with which you can supply an expression to be evaluated when the form is submitted.</p>
 
 <pre><code>   &lt;form l:onsubmit=&quot;{say_hello(personName)}&quot;&gt;
-      What is your name? 
+      What is your name?
       &lt;input l:name=&quot;{personName}&quot;/&gt;
    &lt;/form&gt;</code></pre>
 
@@ -466,7 +471,7 @@
 
 <pre><code>    fun foo(x, y, z)
     {
-        # ... body 
+        # ... body
     }</code></pre>
 
 <p>Anonymous functions just omit the name: <code>fun (x) { x + 1 }</code> is an expression that evaluates to an anonymous function value.</p>
@@ -627,7 +632,7 @@
 
 <p>For example, to create a handle to the table <code>ice_cream</code> with fields <code>i</code> and <code>f</code> both of type <code>Int</code> associated with the database <code>db</code>, and bind it to the variable <code>fac_table</code>, use:</p>
 
-<pre><code>  var parlors = table &quot;ice_cream_parlors&quot; 
+<pre><code>  var parlors = table &quot;ice_cream_parlors&quot;
                 with (name : String, fans : Int) from db;</code></pre>
 
 <p>The variable <code>parlors</code> then has type <code>TableHandle((name : String, fans : Int), (name : String, fans : Int), (name : String, fans : Int))</code>. The three arguments to the <code>TableHandle</code> type constructor together identify the type of a row and its constraints (See <a href="#Table-constraints">&quot;Table constraints&quot;</a>).</p>
@@ -638,7 +643,7 @@
 
 <p>Since a table-handle in Links is different from a list, we cannot simply draw elements directly from a table as we draw them from a list. But a special form of generator accepts a table-handle as its source:</p>
 
-<pre><code>  var parlors = table &quot;ice_cream_parlors&quot; 
+<pre><code>  var parlors = table &quot;ice_cream_parlors&quot;
                 with (name : String, fans : Int) from db;
   for (p &lt;-- parlors)
   where (p.flavors &gt; 1)
@@ -713,7 +718,7 @@
 
 <p>To enable these special features on a table field, add a <code>where</code> clause to the table expression that lists field names with the corresponding keyword. For example:</p>
 
-<pre><code>  table &quot;people&quot; with (id:Int, name:String, nationality:String) 
+<pre><code>  table &quot;people&quot; with (id:Int, name:String, nationality:String)
                  where id readonly, nationality default from db</code></pre>
 
 <p>This returns a table handle for the table <code>people</code> with fields <code>id</code> and <code>nationality</code>, where the <code>id</code> field cannot be modified through this handle, and <code>nationality</code> has a default value so giving a value is optional when modifying the table.</p>
@@ -721,9 +726,9 @@
 <p>The type assigned by Links to a table handle has three fields, indicating the <i>readable</i> fields, the <i>writeable</i> fields and the <i>needed</i> fields, in that order:</p>
 
 <pre><code>  links&gt;
-    var t = table &quot;people&quot; with (id:Int, name:String, nationality:String) 
+    var t = table &quot;people&quot; with (id:Int, name:String, nationality:String)
                            where id readonly, nationality default from db;
-  t = (table people) : 
+  t = (table people) :
     TableHandle((id:Int,name:String,nationality:String),
                 (name:String,nationality:String),
                 (name:String))</code></pre>
@@ -888,7 +893,7 @@
 
     links&gt; [(42, &quot;The answer&quot;),
             (7, &quot;The number of wonders of the world&quot;)];
-    [(42, &quot;The answer&quot;), (7, &quot;The number of wonders of the world&quot;)] 
+    [(42, &quot;The answer&quot;), (7, &quot;The number of wonders of the world&quot;)]
       : [(Int, String)]</code></pre>
 
 <p>Note that the type of an integer is Int, and the type of a string is String. The <i>pair</i> <code>(42, &quot;The answer&quot;)</code> has a type that indicates the first part of the pair is an <code>Int</code> and the second part is a <code>String</code>; this type is written <code>(Int, String)</code>.</p>
@@ -2024,7 +2029,7 @@
 <p>The available settings can be discovered in the interactive loop using the <code>@settings</code> directive:</p>
 
 <pre><code>    links&gt; @settings;
-    
+
     User settings
      show_unification          false
      show_typechecking         false
@@ -2049,5 +2054,3 @@
 </body>
 
 </html>
-
-
